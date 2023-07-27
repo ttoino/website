@@ -1,7 +1,6 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import Header from "$lib/components/Header.svelte";
-    import { fly, slide } from "svelte/transition";
     import "./style.css";
 
     let index = false;
@@ -15,9 +14,7 @@
 >
     <Header {index} />
 
-    <main
-        class="overflow-auto grid grid-cols-[1fr] grid-rows-[1fr]"
-    >
+    <main class="overflow-auto grid grid-cols-[1fr] grid-rows-[1fr]">
         <slot />
     </main>
 </div>

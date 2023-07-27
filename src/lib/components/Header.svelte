@@ -38,8 +38,12 @@
             <a href="/projects">projects</a>
         </div> -->
 
-        <div class="flex flex-row gap-4 items-start md:self-end md:flex-1 text-2xl">
-            <a href="https://github.com/ttoino" target="_blank">{@html github}</a>
+        <div
+            class="flex flex-row gap-4 items-start md:self-end md:flex-1 text-2xl"
+        >
+            <a href="https://github.com/ttoino" target="_blank"
+                >{@html github}</a
+            >
             <!-- <button type="button">
                 <AnimatedIcon path="/light-dark-mode.json" />
             </button> -->
