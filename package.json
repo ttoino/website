@@ -17,6 +17,7 @@
         "@fontsource/fira-mono": "^5.0.5",
         "@neoconfetti/svelte": "^1.0.0",
         "@poppanator/sveltekit-svg": "^4.0.0",
+        "@rgossiaux/svelte-headlessui": "^2.0.0",
         "@sveltejs/adapter-static": "^2.0.2",
         "@sveltejs/kit": "^1.22.3",
         "@tailwindcss/typography": "^0.5.9",

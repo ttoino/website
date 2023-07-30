@@ -10,6 +10,7 @@ import MongodbIcon from "./icons/technologies/mongodb.svg?component";
 import PhpIcon from "./icons/technologies/php.svg?component";
 import PostgresqlIcon from "./icons/technologies/postgresql.svg?component";
 import PrimerIcon from "./icons/technologies/primer.svg?component";
+import PrologIcon from "./icons/technologies/prolog.svg?component";
 import PythonIcon from "./icons/technologies/python.svg?component";
 import RustIcon from "./icons/technologies/rust.svg?component";
 import SvelteIcon from "./icons/technologies/svelte.svg?component";
@@ -34,6 +35,7 @@ export const technologies = {
     php: { name: "PHP", icon: PhpIcon },
     postgresql: { name: "PostgreSQL", icon: PostgresqlIcon },
     primer: { name: "Primer CSS", icon: PrimerIcon },
+    prolog: { name: "Prolog", icon: PrologIcon },
     python: { name: "Python", icon: PythonIcon },
     rust: { name: "Rust", icon: RustIcon },
     svelte: { name: "Svelte/SvelteKit", icon: SvelteIcon },

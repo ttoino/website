@@ -1,3 +1,4 @@
+import GameIcon from "./icons/tags/game.svg?component";
 import MobileIcon from "./icons/tags/mobile.svg?component";
 import NativeIcon from "./icons/tags/native.svg?component";
 import PersonalIcon from "./icons/tags/personal.svg?component";
@@ -11,6 +12,7 @@ export interface Tag {
 }
 
 export const tags = {
+    game: { name: "Game", icon: GameIcon },
     mobile: { name: "Mobile", icon: MobileIcon },
     native: { name: "Native", icon: NativeIcon },
     personal: { name: "Personal", icon: PersonalIcon },

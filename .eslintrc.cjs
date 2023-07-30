@@ -1,3 +1,4 @@
+/** @type {import("eslint").ESLint.ConfigData} */
 module.exports = {
     root: true,
     extends: [
@@ -27,4 +28,13 @@ module.exports = {
             },
         },
     ],
+    rules: {
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                argsIgnorePattern: "^_",
+                varsIgnorePattern: "^\\$\\$(Props|Events|Slots)$",
+            },
+        ],
+    },
 };
