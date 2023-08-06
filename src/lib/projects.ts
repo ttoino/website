@@ -62,7 +62,7 @@ export const projects = [
         ],
         tags: ["web", "university"],
         repo: "https://github.com/ttoino/feup-lbaw",
-        url: "https://atrello.toino.pt",
+        url: "https://atrellado.toino.pt",
         image: "/projects/atrellado.png",
     },
     {

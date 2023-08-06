@@ -18,29 +18,29 @@ import TailwindIcon from "./icons/technologies/tailwind.svg?component";
 import TypescriptIcon from "./icons/technologies/typescript.svg?component";
 
 export interface Technology {
-    name: string;
+    label: string;
     icon: typeof AntlrIcon;
 }
 
 export const technologies = {
-    android: { name: "Android", icon: AndroidIcon },
-    antlr: { name: "ANTLR", icon: AntlrIcon },
-    bootstrap: { name: "Bootstrap", icon: BootstrapIcon },
-    css: { name: "CSS", icon: CssIcon },
-    html: { name: "HTML", icon: HtmlIcon },
-    java: { name: "Java", icon: JavaIcon },
-    javascript: { name: "JavaScript", icon: JavascriptIcon },
-    laravel: { name: "Laravel", icon: LaravelIcon },
-    mongodb: { name: "MongoDB", icon: MongodbIcon },
-    php: { name: "PHP", icon: PhpIcon },
-    postgresql: { name: "PostgreSQL", icon: PostgresqlIcon },
-    primer: { name: "Primer CSS", icon: PrimerIcon },
-    prolog: { name: "Prolog", icon: PrologIcon },
-    python: { name: "Python", icon: PythonIcon },
-    rust: { name: "Rust", icon: RustIcon },
-    svelte: { name: "Svelte/SvelteKit", icon: SvelteIcon },
-    tailwind: { name: "Tailwind CSS", icon: TailwindIcon },
-    typescript: { name: "TypeScript", icon: TypescriptIcon },
+    android: { label: "Android", icon: AndroidIcon },
+    antlr: { label: "ANTLR", icon: AntlrIcon },
+    bootstrap: { label: "Bootstrap", icon: BootstrapIcon },
+    css: { label: "CSS", icon: CssIcon },
+    html: { label: "HTML", icon: HtmlIcon },
+    java: { label: "Java", icon: JavaIcon },
+    javascript: { label: "JavaScript", icon: JavascriptIcon },
+    laravel: { label: "Laravel", icon: LaravelIcon },
+    mongodb: { label: "MongoDB", icon: MongodbIcon },
+    php: { label: "PHP", icon: PhpIcon },
+    postgresql: { label: "PostgreSQL", icon: PostgresqlIcon },
+    primer: { label: "Primer CSS", icon: PrimerIcon },
+    prolog: { label: "Prolog", icon: PrologIcon },
+    python: { label: "Python", icon: PythonIcon },
+    rust: { label: "Rust", icon: RustIcon },
+    svelte: { label: "Svelte/SvelteKit", icon: SvelteIcon },
+    tailwind: { label: "Tailwind CSS", icon: TailwindIcon },
+    typescript: { label: "TypeScript", icon: TypescriptIcon },
 } as const satisfies Record<string, Technology>;
 
 export type TechnologyId = keyof typeof technologies;

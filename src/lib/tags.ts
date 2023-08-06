@@ -7,18 +7,18 @@ import WearableIcon from "./icons/tags/wearable.svg?component";
 import WebIcon from "./icons/tags/web.svg?component";
 
 export interface Tag {
-    name: string;
+    label: string;
     icon: typeof MobileIcon;
 }
 
 export const tags = {
-    game: { name: "Game", icon: GameIcon },
-    mobile: { name: "Mobile", icon: MobileIcon },
-    native: { name: "Native", icon: NativeIcon },
-    personal: { name: "Personal", icon: PersonalIcon },
-    university: { name: "University", icon: UniversityIcon },
-    wearable: { name: "Wearable", icon: WearableIcon },
-    web: { name: "Web", icon: WebIcon },
+    game: { label: "Game", icon: GameIcon },
+    mobile: { label: "Mobile", icon: MobileIcon },
+    native: { label: "Native", icon: NativeIcon },
+    personal: { label: "Personal", icon: PersonalIcon },
+    university: { label: "University", icon: UniversityIcon },
+    wearable: { label: "Wearable", icon: WearableIcon },
+    web: { label: "Web", icon: WebIcon },
 } as const satisfies Record<string, Tag>;
 
 export type TagId = keyof typeof tags;

@@ -44,7 +44,11 @@
             <a
                 href="https://github.com/ttoino"
                 target="_blank"
-                rel="noopener noreferrer"><Github /></a
+                rel="noopener noreferrer"
+                title="Github"
+                ><Github aria-hidden="true" /><span class="sr-only"
+                    >Github profile</span
+                ></a
             >
             <!-- <button type="button">
                 <AnimatedIcon path="/light-dark-mode.json" />
