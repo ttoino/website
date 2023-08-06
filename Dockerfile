@@ -17,7 +17,7 @@ COPY vite.config.ts .
 
 RUN yarn build
 
-FROM node:current-alpine AS prod
+FROM alpine:latest AS prod
 
 WORKDIR /app
 
