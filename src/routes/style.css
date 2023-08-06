@@ -8,7 +8,12 @@
         height: 1em;
     }
 
-    svg * {
+    svg > :not(mask),
+    svg > :not(mask) > :not(mask),
+    svg > :not(mask) > :not(mask) > :not(mask),
+    svg > :not(mask) > :not(mask) > :not(mask) > :not(mask),
+    svg > :not(mask) > :not(mask) > :not(mask) > :not(mask) > :not(mask),
+    svg > :not(mask) > :not(mask) > :not(mask) > :not(mask) > :not(mask) * {
         fill: currentColor;
     }
 }

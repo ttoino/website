@@ -1,3 +1,4 @@
+import DiscordIcon from "./icons/tags/discord.svg?component";
 import GameIcon from "./icons/tags/game.svg?component";
 import MobileIcon from "./icons/tags/mobile.svg?component";
 import NativeIcon from "./icons/tags/native.svg?component";
@@ -12,6 +13,7 @@ export interface Tag {
 }
 
 export const tags = {
+    discord: { label: "Discord", icon: DiscordIcon },
     game: { label: "Game", icon: GameIcon },
     mobile: { label: "Mobile", icon: MobileIcon },
     native: { label: "Native", icon: NativeIcon },
