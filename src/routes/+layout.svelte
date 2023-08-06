@@ -14,7 +14,9 @@
 >
     <Header {index} />
 
-    <main class="overflow-auto grid justify-items-center grid-cols-[1fr] grid-rows-[1fr]">
+    <main
+        class="overflow-auto grid justify-items-center grid-cols-[1fr] grid-rows-[1fr]"
+    >
         <slot />
     </main>
 </div>

@@ -106,5 +106,5 @@ export const projects = [
         technologies: ["html", "css", "javascript"],
         tags: ["web", "personal"],
         repo: "https://github.com/ttoino/latex-previewer",
-    }
+    },
 ] as const satisfies readonly Project[];
