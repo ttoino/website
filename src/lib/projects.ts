@@ -74,6 +74,7 @@ export const projects = [
         technologies: ["prolog"],
         tags: ["native", "university", "game"],
         repo: "https://github.com/ttoino/feup-pfl-proj2",
+        image: "/projects/center.png",
     },
     {
         id: "aocm",
@@ -129,6 +130,7 @@ export const projects = [
         technologies: ["cpp", "typescript"],
         tags: ["native", "discord", "personal", "university", "game"],
         repo: "https://github.com/ttoino/proggers-discord-bot",
+        image: "/projects/proggers.png",
     },
     {
         id: "solitaire",
