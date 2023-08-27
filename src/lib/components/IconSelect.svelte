@@ -54,7 +54,7 @@
 <div class="relative">
     <button
         on:click={() => (open = !open) && (clicked = true)}
-        class="flex flex-row items-center p-2 cursor-pointer rounded-full hover:bg-surface0 transition-colors ease-in-out"
+        class="flex cursor-pointer flex-row items-center rounded-full p-2 transition-colors ease-in-out hover:bg-surface0"
         aria-haspopup="menu"
         id={name}
     >
@@ -69,7 +69,7 @@
 
     {#if open}
         <div
-            class="flex flex-col bg-surface0 rounded overflow-auto w-60 max-h-80 absolute right-0 z-10 translate-y-1 shadow"
+            class="absolute right-0 z-10 flex max-h-80 w-60 translate-y-1 flex-col overflow-auto rounded bg-surface0 shadow"
             transition:fly={{ y: 20 }}
             use:focusTrap
             use:clickoutside
@@ -81,7 +81,7 @@
         >
             {#if multiple}
                 <label
-                    class="flex flex-row items-center gap-2 p-2 cursor-pointer outline-blue outline-2 -outline-offset-2 focus-within:outline hover:bg-surface1 transition-colors ease-in-out"
+                    class="flex cursor-pointer flex-row items-center gap-2 p-2 outline-2 -outline-offset-2 outline-blue transition-colors ease-in-out focus-within:outline hover:bg-surface1"
                 >
                     <input
                         type="checkbox"
@@ -104,7 +104,7 @@
                     {#if value.length === keys.length}
                         <span
                             transition:fade={{ duration: 100 }}
-                            class="text-2xl ml-auto"
+                            class="ml-auto text-2xl"
                             aria-hidden="true"
                         >
                             <CheckIcon />
@@ -114,7 +114,7 @@
             {/if}
             {#each keys as item}
                 <label
-                    class="flex flex-row items-center gap-2 p-2 cursor-pointer outline-blue outline-2 -outline-offset-2 focus-within:outline hover:bg-surface1 transition-colors ease-in-out"
+                    class="flex cursor-pointer flex-row items-center gap-2 p-2 outline-2 -outline-offset-2 outline-blue transition-colors ease-in-out focus-within:outline hover:bg-surface1"
                 >
                     {#if multiple}
                         <input
@@ -150,7 +150,7 @@
                     {#if multiple && value.includes(item)}
                         <span
                             transition:fade={{ duration: 100 }}
-                            class="text-2xl ml-auto"
+                            class="ml-auto text-2xl"
                             aria-hidden="true"
                         >
                             <CheckIcon />

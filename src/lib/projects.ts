@@ -31,7 +31,7 @@ export const projects = [
         name: "Top Commiters",
         description: "The top commiters per country",
         startDate: new Date("2023-05-24"),
-        technologies: ["svelte", "typescript", "primer", "mongodb"],
+        technologies: ["svelte", "typescript", "primer"],
         tags: ["web", "personal"],
         repo: "https://github.com/ttoino/top-commiters",
         url: "https://commits.toino.pt",
@@ -124,7 +124,8 @@ export const projects = [
     {
         id: "proggers",
         name: "Proggers",
-        description: "A single player game in a discord bot where the player runs away from robots",
+        description:
+            "A single player game in a discord bot where the player runs away from robots",
         startDate: new Date("2021-03-29"),
         endDate: new Date("2021-03-30"),
         technologies: ["cpp", "typescript"],
@@ -173,5 +174,5 @@ export const projects = [
         technologies: ["java", "android"],
         tags: ["mobile", "personal"],
         repo: "https://github.com/ttoino/op-custom-wallpaper-provider",
-    }
+    },
 ] as const satisfies readonly Project[];

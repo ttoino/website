@@ -8,7 +8,7 @@
 <header
     class:grow={index}
     class:grow-0={!index}
-    class="flex flex-1 flex-col place-content-center place-items-center gap-2 md:gap-4 bg-crust p-2 md:p-4 overflow-clip sticky top-0 z-10 text-xl motion-safe:transition-all duration-1000"
+    class="sticky top-0 z-10 flex flex-1 flex-col place-content-center place-items-center gap-2 overflow-clip bg-crust p-2 text-xl duration-1000 motion-safe:transition-all md:gap-4 md:p-4"
 >
     <nav class="contents">
         <a
@@ -23,7 +23,7 @@
             class="motion-safe:transition-all md:absolute"
         >
             <h1
-                class="before:content-['\_'] before:invisible after:content-['\_'] motion-safe:after:animate-terminal-blink"
+                class="before:invisible before:content-['\_'] after:content-['\_'] motion-safe:after:animate-terminal-blink"
             >
                 toino
             </h1>
@@ -32,14 +32,14 @@
         <div
             class:md:translate-y-20={index}
             class:md:translate-y-0={!index}
-            class="flex flex-col md:flex-row gap-2 md:gap-8 md:absolute motion-safe:transition-all"
+            class="flex flex-col gap-2 motion-safe:transition-all md:absolute md:flex-row md:gap-8"
         >
             <!-- <a href="/about">about_me</a> -->
             <a href="/projects">projects</a>
         </div>
 
         <div
-            class="flex flex-row gap-4 items-start md:self-end md:flex-1 text-2xl"
+            class="flex flex-row items-start gap-4 text-2xl md:flex-1 md:self-end"
         >
             <a
                 href="https://github.com/ttoino"

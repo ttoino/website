@@ -79,9 +79,9 @@
                 : [technology]);
 </script>
 
-<Page class="flex flex-col gap-2 md:gap-4 max-w-screen-xl">
+<Page class="flex max-w-screen-xl flex-col gap-2 md:gap-4">
     <div class="flex flex-row items-center gap-1">
-        <h2 class="text-4xl mr-auto">Projects</h2>
+        <h2 class="mr-auto text-4xl">Projects</h2>
 
         <IconSelect
             bind:value={selectedTags}
@@ -110,7 +110,7 @@
     </div>
 
     <div
-        class="grid grid-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(theme(spacing.64),1fr))] gap-4 relative"
+        class="relative grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fill,minmax(theme(spacing.64),1fr))]"
     >
         {#each projects as project (project.id)}
             <div

@@ -4,7 +4,7 @@
 
 <div
     transition:fly={{ y: 32 }}
-    class="col-span-full row-span-full p-4 w-full {$$props.class ?? ''}"
+    class="col-span-full row-span-full w-full p-4 {$$props.class ?? ''}"
 >
     <slot />
 </div>
