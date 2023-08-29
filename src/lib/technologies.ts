@@ -5,6 +5,7 @@ import CIcon from "./icons/technologies/c.svg?component";
 import CppIcon from "./icons/technologies/cpp.svg?component";
 import CssIcon from "./icons/technologies/css.svg?component";
 import FirebaseIcon from "./icons/technologies/firebase.svg?component";
+import PygameIcon from "./icons/technologies/pygame.svg?component";
 import HtmlIcon from "./icons/technologies/html.svg?component";
 import JavaIcon from "./icons/technologies/java.svg?component";
 import JavascriptIcon from "./icons/technologies/javascript.svg?component";
@@ -46,7 +47,7 @@ export const technologies = {
     postgresql: { label: "PostgreSQL", icon: PostgresqlIcon },
     primer: { label: "Primer CSS", icon: PrimerIcon },
     prolog: { label: "Prolog", icon: PrologIcon },
-    pygame: { label: "PyGame", icon: PythonIcon },
+    pygame: { label: "PyGame", icon: PygameIcon },
     python: { label: "Python", icon: PythonIcon },
     rust: { label: "Rust", icon: RustIcon },
     svelte: { label: "Svelte/SvelteKit", icon: SvelteIcon },

@@ -6,7 +6,9 @@
     import { technologies, type TechnologyId } from "$lib/technologies";
 
     export let project: Project;
+    export let selectedTags: TagId[];
     export let setTag: (tag: TagId) => unknown;
+    export let selectedTechnologies: TechnologyId[];
     export let setTechnology: (technology: TechnologyId) => unknown;
 </script>
 
@@ -30,6 +32,7 @@
                 <li title={tags[tag].label} class="flex">
                     <button
                         class="-m-1 flex cursor-pointer p-1"
+                        class:opacity-40={!selectedTags.includes(tag)}
                         on:click={() => setTag(tag)}
                     >
                         <svelte:component
@@ -49,6 +52,7 @@
                 <li title={technologies[tech].label} class="flex">
                     <button
                         class="-m-1 flex cursor-pointer p-1"
+                        class:opacity-40={!selectedTechnologies.includes(tech)}
                         on:click={() => setTechnology(tech)}
                     >
                         <svelte:component

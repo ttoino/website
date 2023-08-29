@@ -118,7 +118,13 @@
                 transition:myScale={{ duration: 300 }}
                 animate:flip={{ duration: 300 }}
             >
-                <Project {project} {setTag} {setTechnology} />
+                <Project
+                    {project}
+                    {selectedTags}
+                    {setTag}
+                    {selectedTechnologies}
+                    {setTechnology}
+                />
             </div>
         {/each}
     </div>
