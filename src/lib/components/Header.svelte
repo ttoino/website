@@ -6,11 +6,14 @@
 </script>
 
 <header
-    class:grow={index}
     class:grow-0={!index}
-    class="sticky top-0 z-10 flex flex-1 flex-col place-content-center place-items-center gap-2 overflow-clip bg-crust p-2 text-xl duration-1000 motion-safe:transition-all md:gap-4 md:p-4"
+    class:grid-rows-[0fr]={!index}
+    class:grid-rows-[1fr]={index}
+    class="sticky top-0 z-10 grid flex-1 content-center items-start justify-stretch justify-items-stretch overflow-clip bg-crust text-xl duration-1000 focus-within:grid-rows-[1fr] hover:grid-rows-[1fr] motion-safe:transition-all md:grid-rows-[1fr] md:items-stretch"
 >
-    <nav class="contents">
+    <nav
+        class="my-auto flex min-h-[2.75rem] flex-col items-center justify-center gap-2 p-2 md:m-0 md:gap-4 md:p-4"
+    >
         <a
             href="/"
             class:text-6xl={index}
