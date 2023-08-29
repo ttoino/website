@@ -14,6 +14,7 @@
     import { tags, type TagId } from "$lib/tags";
     import { technologies, type TechnologyId } from "$lib/technologies";
     import { myScale } from "$lib/transition/myscale";
+    import { MetaTags } from "svelte-meta-tags";
 
     const sortByDate = (a: ProjectT, b: ProjectT) => {
         if (a.endDate && b.endDate)
@@ -78,6 +79,11 @@
                 ? (Object.keys(technologies) as TechnologyId[])
                 : [technology]);
 </script>
+
+<MetaTags
+    title="Projects • toino"
+    description="My personal and university projects"
+/>
 
 <Page class="flex max-w-screen-xl flex-col gap-2 md:gap-4">
     <div class="flex flex-row items-center gap-1">
