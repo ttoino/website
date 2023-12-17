@@ -16,10 +16,10 @@
     class="relative flex flex-col overflow-hidden rounded-md bg-mantle p-2 md:p-4"
 >
     {#if project.image}
-        <img
+        <enhanced:img
             src={project.image}
             alt=""
-            class="-m-2 mb-2 aspect-video h-auto max-w-[unset] object-cover shadow-inner md:-m-4 md:mb-2"
+            class="-m-2 mb-2 aspect-video h-auto w-[calc(theme(spacing.4)+100%)] max-w-[unset] object-cover shadow-inner md:-m-4 md:mb-2 md:w-[calc(theme(spacing.8)+100%)]"
         />
     {/if}
 

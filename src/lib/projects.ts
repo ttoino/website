@@ -1,6 +1,18 @@
 import type { TagId } from "./tags";
 import type { TechnologyId } from "./technologies";
 
+import WebsiteImage from "./images/projects/website.png?enhanced";
+import TopCommitersImage from "./images/projects/top-commiters.png?enhanced";
+import AtrelladoImage from "./images/projects/atrellado.png?enhanced";
+import CenterImage from "./images/projects/center.png?enhanced";
+import AocmImage from "./images/projects/aocm.png?enhanced";
+import XaufomeImage from "./images/projects/xaufome.png?enhanced";
+import LatexPreviewerImage from "./images/projects/latex-previewer.png?enhanced";
+import OotbImage from "./images/projects/ootb.png?enhanced";
+import ProggersImage from "./images/projects/proggers.png?enhanced";
+import SolitaireImage from "./images/projects/solitaire.png?enhanced";
+import WatchFaceImage from "./images/projects/watch-face.png?enhanced";
+
 export interface Project {
     id: string;
     name: string;
@@ -24,7 +36,7 @@ export const projects = [
         tags: ["web", "personal"],
         repo: "https://github.com/ttoino/website",
         url: "https://toino.pt",
-        image: "/projects/website.png",
+        image: WebsiteImage,
     },
     {
         id: "top-commiters",
@@ -35,7 +47,7 @@ export const projects = [
         tags: ["web", "personal"],
         repo: "https://github.com/ttoino/top-commiters",
         url: "https://commits.toino.pt",
-        image: "/projects/top-commiters.png",
+        image: TopCommitersImage,
     },
     {
         id: "jmm",
@@ -63,7 +75,7 @@ export const projects = [
         tags: ["web", "university"],
         repo: "https://github.com/ttoino/feup-lbaw",
         url: "https://atrellado.toino.pt",
-        image: "/projects/atrellado.png",
+        image: AtrelladoImage,
     },
     {
         id: "center",
@@ -74,7 +86,7 @@ export const projects = [
         technologies: ["prolog"],
         tags: ["terminal", "game", "university"],
         repo: "https://github.com/ttoino/feup-pfl-proj2",
-        image: "/projects/center.png",
+        image: CenterImage,
     },
     {
         id: "aocm",
@@ -85,7 +97,7 @@ export const projects = [
         technologies: ["python"],
         tags: ["terminal", "personal"],
         repo: "https://github.com/ttoino/advent-of-code-manager",
-        image: "/projects/aocm.png",
+        image: AocmImage,
     },
     {
         id: "xaufome",
@@ -97,7 +109,7 @@ export const projects = [
         tags: ["web", "university"],
         repo: "https://github.com/ttoino/feup-ltw-proj",
         url: "https://xaufome.toino.pt",
-        image: "/projects/xaufome.png",
+        image: XaufomeImage,
     },
     {
         id: "latex-previewer",
@@ -109,7 +121,7 @@ export const projects = [
         tags: ["web", "personal"],
         repo: "https://github.com/ttoino/latex-previewer",
         url: "https://latex.toino.pt",
-        image: "/projects/latex-previewer.png",
+        image: LatexPreviewerImage,
     },
     {
         id: "ootb",
@@ -120,7 +132,7 @@ export const projects = [
         technologies: ["java", "lanterna"],
         tags: ["native", "game", "university"],
         repo: "https://github.com/ttoino/feup-ldts-proj",
-        image: "/projects/ootb.png",
+        image: OotbImage,
     },
     {
         id: "proggers",
@@ -132,7 +144,7 @@ export const projects = [
         technologies: ["cpp", "typescript"],
         tags: ["terminal", "discord", "game", "personal", "university"],
         repo: "https://github.com/ttoino/proggers-discord-bot",
-        image: "/projects/proggers.png",
+        image: ProggersImage,
     },
     {
         id: "solitaire",
@@ -143,7 +155,7 @@ export const projects = [
         technologies: ["pygame", "python"],
         tags: ["native", "game", "university"],
         repo: "https://github.com/ttoino/feup-fpro-solitaire",
-        image: "/projects/solitaire.png",
+        image: SolitaireImage,
     },
     {
         id: "bruno",
@@ -164,7 +176,7 @@ export const projects = [
         technologies: ["android", "java"],
         tags: ["wearable", "personal"],
         repo: "https://github.com/ttoino/custom-watch-face",
-        image: "/projects/watch-face.png",
+        image: WatchFaceImage,
     },
     {
         id: "opcwp",

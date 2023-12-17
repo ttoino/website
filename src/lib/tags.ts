@@ -2,6 +2,7 @@ import DiscordIcon from "./icons/tags/discord.svg?component";
 import GameIcon from "./icons/tags/game.svg?component";
 import MobileIcon from "./icons/tags/mobile.svg?component";
 import NativeIcon from "./icons/tags/native.svg?component";
+import NIIcon from "./icons/tags/ni.svg?component";
 import PersonalIcon from "./icons/tags/personal.svg?component";
 import TerminalIcon from "./icons/tags/terminal.svg?component";
 import UniversityIcon from "./icons/tags/university.svg?component";
@@ -18,6 +19,7 @@ export const tags = {
     game: { label: "Game", icon: GameIcon },
     mobile: { label: "Mobile", icon: MobileIcon },
     native: { label: "Native", icon: NativeIcon },
+    ni: { label: "NIAEFEUP", icon: NIIcon },
     personal: { label: "Personal", icon: PersonalIcon },
     terminal: { label: "Terminal", icon: TerminalIcon },
     university: { label: "University", icon: UniversityIcon },
