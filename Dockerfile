@@ -3,9 +3,9 @@ FROM node:current-alpine AS build
 WORKDIR /app
 
 COPY package.json .
-COPY yarn.lock .
+COPY package-lock.json .
 
-RUN yarn
+RUN npm ci
 
 COPY static static
 COPY src src
@@ -15,7 +15,7 @@ COPY tailwind.config.js .
 COPY tsconfig.json .
 COPY vite.config.ts .
 
-RUN yarn build
+RUN npm run build
 
 FROM alpine:latest AS prod
 
