@@ -31,7 +31,7 @@
             {#each project.tags as tag, i (i)}
                 <li title={tags[tag].label} class="flex">
                     <button
-                        class="-m-1 flex cursor-pointer p-1"
+                        class="-m-1 flex cursor-pointer p-1 transition-opacity"
                         class:opacity-40={!selectedTags.includes(tag)}
                         on:click={() => setTag(tag)}
                     >
@@ -51,7 +51,7 @@
             {#each project.technologies as tech, i (i)}
                 <li title={technologies[tech].label} class="flex">
                     <button
-                        class="-m-1 flex cursor-pointer p-1"
+                        class="-m-1 flex cursor-pointer p-1 transition-opacity"
                         class:opacity-40={!selectedTechnologies.includes(tech)}
                         on:click={() => setTechnology(tech)}
                     >

@@ -9,6 +9,8 @@ import PygameIcon from "./icons/technologies/pygame.svg?component";
 import HtmlIcon from "./icons/technologies/html.svg?component";
 import JavaIcon from "./icons/technologies/java.svg?component";
 import JavascriptIcon from "./icons/technologies/javascript.svg?component";
+import KotlinIcon from "./icons/technologies/kotlin.svg?component";
+import KtorIcon from "./icons/technologies/ktor.svg?component";
 import LanternaIcon from "./icons/technologies/lanterna.svg?component";
 import LaravelIcon from "./icons/technologies/laravel.svg?component";
 import MongodbIcon from "./icons/technologies/mongodb.svg?component";
@@ -19,6 +21,7 @@ import PrimerIcon from "./icons/technologies/primer.svg?component";
 import PrologIcon from "./icons/technologies/prolog.svg?component";
 import PythonIcon from "./icons/technologies/python.svg?component";
 import RustIcon from "./icons/technologies/rust.svg?component";
+import SolrIcon from "./icons/technologies/solr.svg?component";
 import SvelteIcon from "./icons/technologies/svelte.svg?component";
 import TailwindIcon from "./icons/technologies/tailwind.svg?component";
 import TypescriptIcon from "./icons/technologies/typescript.svg?component";
@@ -39,6 +42,8 @@ export const technologies = {
     html: { label: "HTML", icon: HtmlIcon },
     java: { label: "Java", icon: JavaIcon },
     javascript: { label: "JavaScript", icon: JavascriptIcon },
+    kotlin: { label: "Kotlin", icon: KotlinIcon },
+    ktor: { label: "Ktor", icon: KtorIcon },
     lanterna: { label: "Lanterna", icon: LanternaIcon },
     laravel: { label: "Laravel", icon: LaravelIcon },
     mongodb: { label: "MongoDB", icon: MongodbIcon },
@@ -50,6 +55,7 @@ export const technologies = {
     pygame: { label: "PyGame", icon: PygameIcon },
     python: { label: "Python", icon: PythonIcon },
     rust: { label: "Rust", icon: RustIcon },
+    solr: { label: "Solr", icon: SolrIcon },
     svelte: { label: "Svelte/SvelteKit", icon: SvelteIcon },
     tailwind: { label: "Tailwind CSS", icon: TailwindIcon },
     typescript: { label: "TypeScript", icon: TypescriptIcon },

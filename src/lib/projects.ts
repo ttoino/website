@@ -3,6 +3,8 @@ import type { TechnologyId } from "./technologies";
 
 import WebsiteImage from "./images/projects/website.png?enhanced";
 import TopCommitersImage from "./images/projects/top-commiters.png?enhanced";
+import LuisImage from "./images/projects/luis.png?enhanced";
+import SdleImage from "./images/projects/sdle.png?enhanced";
 import AtrelladoImage from "./images/projects/atrellado.png?enhanced";
 import CenterImage from "./images/projects/center.png?enhanced";
 import AocmImage from "./images/projects/aocm.png?enhanced";
@@ -19,8 +21,8 @@ export interface Project {
     description?: string;
     startDate: Date;
     endDate?: Date;
-    technologies?: readonly TechnologyId[];
-    tags?: readonly TagId[];
+    technologies: readonly TechnologyId[];
+    tags: readonly TagId[];
     repo?: string;
     url?: string;
     image?: string;
@@ -43,11 +45,36 @@ export const projects = [
         name: "Top Commiters",
         description: "The top commiters per country",
         startDate: new Date("2023-05-24"),
+        endDate: new Date("2023-12-15"),
         technologies: ["primer", "svelte", "typescript"],
         tags: ["web", "personal"],
         repo: "https://github.com/ttoino/top-commiters",
         url: "https://commits.toino.pt",
         image: TopCommitersImage,
+    },
+    {
+        id: "luis",
+        name: "LUIS",
+        description: "Search the League of Legends universe stories",
+        startDate: new Date("2023-10-05"),
+        endDate: new Date("2023-12-23"),
+        technologies: ["solr", "svelte", "tailwind", "typescript"],
+        tags: ["web", "university"],
+        repo: "https://github.com/ttoino/feup-pri",
+        url: "https://luis.toino.pt",
+        image: LuisImage,
+    },
+    {
+        id: "sdle",
+        name: "SDLE",
+        description: "Distributed and offline first shopping list web app",
+        startDate: new Date("2023-11-08"),
+        endDate: new Date("2023-12-22"),
+        technologies: ["kotlin", "ktor", "svelte", "tailwind", "typescript"],
+        tags: ["web", "university"],
+        repo: "https://github.com/ttoino/feup-sdle",
+        url: "https://sdle.toino.pt",
+        image: SdleImage,
     },
     {
         id: "jmm",
