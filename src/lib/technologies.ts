@@ -24,6 +24,7 @@ import RustIcon from "./icons/technologies/rust.svg?component";
 import SolrIcon from "./icons/technologies/solr.svg?component";
 import SvelteIcon from "./icons/technologies/svelte.svg?component";
 import TailwindIcon from "./icons/technologies/tailwind.svg?component";
+import ThreejsIcon from "./icons/technologies/threejs.svg?component";
 import TypescriptIcon from "./icons/technologies/typescript.svg?component";
 
 export interface Technology {
@@ -58,6 +59,7 @@ export const technologies = {
     solr: { label: "Solr", icon: SolrIcon },
     svelte: { label: "Svelte/SvelteKit", icon: SvelteIcon },
     tailwind: { label: "Tailwind CSS", icon: TailwindIcon },
+    threejs: { label: "Three.js", icon: ThreejsIcon },
     typescript: { label: "TypeScript", icon: TypescriptIcon },
 } as const satisfies Record<string, Technology>;
 

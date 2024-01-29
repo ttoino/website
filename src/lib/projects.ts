@@ -3,6 +3,7 @@ import type { TechnologyId } from "./technologies";
 
 import WebsiteImage from "./images/projects/website.png?enhanced";
 import TopCommitersImage from "./images/projects/top-commiters.png?enhanced";
+import SgiImage from "./images/projects/sgi.png?enhanced";
 import LuisImage from "./images/projects/luis.png?enhanced";
 import SdleImage from "./images/projects/sdle.png?enhanced";
 import AtrelladoImage from "./images/projects/atrellado.png?enhanced";
@@ -51,6 +52,18 @@ export const projects = [
         repo: "https://github.com/ttoino/top-commiters",
         url: "https://commits.toino.pt",
         image: TopCommitersImage,
+    },
+    {
+        id: "sgi",
+        name: "SGI",
+        description: "3D projects: two scenes and a game",
+        startDate: new Date("2023-09-20"),
+        endDate: new Date("2024-01-04"),
+        technologies: ["javascript", "threejs"],
+        tags: ["web", "university"],
+        repo: "https://github.com/ttoino/feup-sgi",
+        url: "https://sgi.toino.pt",
+        image: SgiImage,
     },
     {
         id: "luis",
