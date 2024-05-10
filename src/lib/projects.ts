@@ -2,6 +2,7 @@ import type { TagId } from "./tags";
 import type { TechnologyId } from "./technologies";
 
 import WebsiteImage from "./images/projects/website.png?enhanced";
+import EmentasImage from "./images/projects/ementas.png?enhanced";
 import TopCommitersImage from "./images/projects/top-commiters.png?enhanced";
 import SgiImage from "./images/projects/sgi.png?enhanced";
 import LuisImage from "./images/projects/luis.png?enhanced";
@@ -41,6 +42,17 @@ export const projects = [
         repo: "https://github.com/ttoino/website",
         url: "https://toino.pt",
         image: WebsiteImage,
+    },
+    {
+        id: "ementas",
+        name: "UP Menus",
+        description: "A website that shows the menus for all UP restaurants",
+        startDate: new Date("2024-04-03"),
+        technologies: ["svelte", "tailwind", "typescript"],
+        tags: ["web", "personal", "university"],
+        repo: "https://github.com/ttoino/ementas",
+        url: "https://ementas.toino.pt",
+        image: EmentasImage,
     },
     {
         id: "top-commiters",
