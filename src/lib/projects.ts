@@ -6,6 +6,7 @@ import TopCommitersImage from "./images/projects/top-commiters.png?enhanced";
 import SgiImage from "./images/projects/sgi.png?enhanced";
 import LuisImage from "./images/projects/luis.png?enhanced";
 import SdleImage from "./images/projects/sdle.png?enhanced";
+import JmmImage from "./images/projects/jmm.png?enhanced";
 import AtrelladoImage from "./images/projects/atrellado.png?enhanced";
 import CenterImage from "./images/projects/center.png?enhanced";
 import AocmImage from "./images/projects/aocm.png?enhanced";
@@ -92,12 +93,14 @@ export const projects = [
     {
         id: "jmm",
         name: "Java--",
-        description: "A Java compiler written in Java",
+        description: "A Java compiler written in Java\nWebsite by @limwa",
         startDate: new Date("2023-03-15"),
         endDate: new Date("2023-05-28"),
         technologies: ["antlr", "java"],
         tags: ["terminal", "university"],
         repo: "https://github.com/ttoino/feup-c",
+        url: "https://jmm.toino.pt",
+        image: JmmImage,
     },
     {
         id: "atrellado",
