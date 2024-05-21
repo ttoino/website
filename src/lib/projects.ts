@@ -48,6 +48,7 @@ export const projects = [
         name: "UP Menus",
         description: "A website that shows the menus for all UP restaurants",
         startDate: new Date("2024-04-03"),
+        endDate: new Date("2024-05-21"),
         technologies: ["svelte", "tailwind", "typescript"],
         tags: ["web", "personal", "university"],
         repo: "https://github.com/ttoino/ementas",
