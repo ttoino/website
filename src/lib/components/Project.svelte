@@ -6,11 +6,19 @@
     import { type TagId, tags } from "$lib/tags";
     import { technologies, type TechnologyId } from "$lib/technologies";
 
-    export let project: Project;
-    export let selectedTags: TagId[];
-    export let setTag: (tag: TagId) => unknown;
-    export let selectedTechnologies: TechnologyId[];
-    export let setTechnology: (technology: TechnologyId) => unknown;
+    let {
+        project,
+        selectedTags,
+        selectedTechnologies,
+        setTag,
+        setTechnology,
+    }: {
+        project: Project;
+        selectedTags: TagId[];
+        selectedTechnologies: TechnologyId[];
+        setTag: (tag: TagId) => unknown;
+        setTechnology: (technology: TechnologyId) => unknown;
+    } = $props();
 </script>
 
 <article
@@ -30,16 +38,15 @@
     {#if project.tags}
         <ul class="mt-2 flex flex-row flex-wrap gap-2 text-2xl">
             {#each project.tags as tag, i (i)}
+                {@const Icon = tags[tag].icon}
+
                 <li title={tags[tag].label} class="flex">
                     <button
                         class="-m-1 flex cursor-pointer p-1 transition-opacity"
                         class:opacity-40={!selectedTags.includes(tag)}
-                        on:click={() => setTag(tag)}
+                        onclick={() => setTag(tag)}
                     >
-                        <svelte:component
-                            this={tags[tag].icon}
-                            aria-hidden="true"
-                        />
+                        <Icon aria-hidden="true" />
                         <span class="sr-only">{tags[tag].label}</span>
                     </button>
                 </li>
@@ -50,16 +57,15 @@
     {#if project.technologies}
         <ul class="mt-2 flex flex-row flex-wrap gap-2 text-2xl">
             {#each project.technologies as tech, i (i)}
+                {@const Icon = technologies[tech].icon}
+
                 <li title={technologies[tech].label} class="flex">
                     <button
                         class="-m-1 flex cursor-pointer p-1 transition-opacity"
                         class:opacity-40={!selectedTechnologies.includes(tech)}
-                        on:click={() => setTechnology(tech)}
+                        onclick={() => setTechnology(tech)}
                     >
-                        <svelte:component
-                            this={technologies[tech].icon}
-                            aria-hidden="true"
-                        />
+                        <Icon aria-hidden="true" />
                         <span class="sr-only">{technologies[tech].label}</span>
                     </button>
                 </li>

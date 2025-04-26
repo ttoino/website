@@ -53,20 +53,24 @@
         },
     } as const;
 
-    let sort: keyof typeof sortings = "date-desc";
+    let sort: keyof typeof sortings = $state("date-desc");
 
-    let selectedTags: TagId[] = Object.keys(tags) as TagId[];
-    let selectedTechnologies: TechnologyId[] = Object.keys(
-        technologies,
-    ) as TechnologyId[];
+    let selectedTags: TagId[] = $state(Object.keys(tags) as TagId[]);
+    let selectedTechnologies: TechnologyId[] = $state(
+        Object.keys(technologies) as TechnologyId[],
+    );
 
-    $: projects = _projects
-        .filter(
-            (p) =>
-                p.tags.some((t) => selectedTags.includes(t)) &&
-                p.technologies.some((t) => selectedTechnologies.includes(t)),
-        )
-        .sort(sortings[sort].sort);
+    let projects = $derived(
+        _projects
+            .filter(
+                (p) =>
+                    p.tags.some((t) => selectedTags.includes(t)) &&
+                    p.technologies.some((t) =>
+                        selectedTechnologies.includes(t),
+                    ),
+            )
+            .sort(sortings[sort].sort),
+    );
 
     const setTag = (tag: TagId) =>
         (selectedTags =

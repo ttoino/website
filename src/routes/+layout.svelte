@@ -1,11 +1,18 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import Header from "$lib/components/Header.svelte";
+    import type { Snippet } from "svelte";
 
     import "./style.css";
 
-    let index = false;
-    $: index = $page.route.id === "/";
+    import { page } from "$app/state";
+    import Header from "$lib/components/Header.svelte";
+
+    let {
+        children,
+    }: {
+        children?: Snippet;
+    } = $props();
+
+    let index = $derived(page.route.id === "/");
 </script>
 
 <div
@@ -18,6 +25,6 @@
     <main
         class="grid grid-cols-[1fr] grid-rows-[1fr] justify-items-center overflow-auto"
     >
-        <slot />
+        {@render children?.()}
     </main>
 </div>
