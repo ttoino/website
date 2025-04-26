@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@catppuccin/tailwindcss';
 @plugin '@tailwindcss/typography';

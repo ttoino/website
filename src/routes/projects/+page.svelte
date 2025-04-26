@@ -90,7 +90,7 @@
     description="My personal and university projects"
 />
 
-<Page class="flex max-w-(--breakpoint-xl) flex-col gap-2 md:gap-4">
+<Page class="max-w-(--breakpoint-xl) flex flex-col gap-2 md:gap-4">
     <div class="flex flex-row items-center gap-1">
         <h2 class="mr-auto text-4xl">Projects</h2>
 
