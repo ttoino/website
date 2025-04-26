@@ -1,6 +1,6 @@
 @import "tailwindcss";
+@import "@catppuccin/tailwindcss/mocha.css";
 
-@plugin '@catppuccin/tailwindcss';
 @plugin '@tailwindcss/typography';
 
 @theme {

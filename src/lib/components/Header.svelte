@@ -9,7 +9,7 @@
     class:grow-0={!index}
     class:grid-rows-[0fr]={!index}
     class:grid-rows-[1fr]={index}
-    class="sticky top-0 z-10 grid flex-1 content-center items-start justify-stretch justify-items-stretch overflow-clip bg-crust text-xl duration-1000 focus-within:grid-rows-[1fr] hover:grid-rows-[1fr] motion-safe:transition-all md:grid-rows-[1fr] md:items-stretch"
+    class="bg-ctp-crust sticky top-0 z-10 grid flex-1 content-center items-start justify-stretch justify-items-stretch overflow-clip text-xl duration-1000 focus-within:grid-rows-[1fr] hover:grid-rows-[1fr] motion-safe:transition-all md:grid-rows-[1fr] md:items-stretch"
 >
     <nav
         class="my-auto flex min-h-[2.75rem] flex-col items-center justify-center gap-2 p-2 md:m-0 md:gap-4 md:p-4"
@@ -26,7 +26,7 @@
             class="motion-safe:transition-all md:absolute"
         >
             <h1
-                class="before:invisible before:content-['\_'] after:content-['\_'] motion-safe:after:animate-terminal-blink"
+                class="motion-safe:after:animate-terminal-blink before:invisible before:content-['\_'] after:content-['\_']"
             >
                 toino
             </h1>

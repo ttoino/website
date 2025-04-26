@@ -22,7 +22,7 @@
 </script>
 
 <article
-    class="bg-mantle relative flex flex-col overflow-hidden rounded-md p-2 md:p-4"
+    class="bg-ctp-mantle relative flex flex-col overflow-hidden rounded-md p-2 md:p-4"
 >
     {#if project.image}
         <enhanced:img
