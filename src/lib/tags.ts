@@ -10,21 +10,21 @@ import WearableIcon from "./icons/tags/wearable.svg?component";
 import WebIcon from "./icons/tags/web.svg?component";
 
 export interface Tag {
-    label: string;
     icon: typeof MobileIcon;
+    label: string;
 }
 
 export const tags = {
-    discord: { label: "Discord", icon: DiscordIcon },
-    game: { label: "Game", icon: GameIcon },
-    mobile: { label: "Mobile", icon: MobileIcon },
-    native: { label: "Native", icon: NativeIcon },
-    ni: { label: "NIAEFEUP", icon: NIIcon },
-    personal: { label: "Personal", icon: PersonalIcon },
-    terminal: { label: "Terminal", icon: TerminalIcon },
-    university: { label: "University", icon: UniversityIcon },
-    wearable: { label: "Wearable", icon: WearableIcon },
-    web: { label: "Web", icon: WebIcon },
+    discord: { icon: DiscordIcon, label: "Discord" },
+    game: { icon: GameIcon, label: "Game" },
+    mobile: { icon: MobileIcon, label: "Mobile" },
+    native: { icon: NativeIcon, label: "Native" },
+    ni: { icon: NIIcon, label: "NIAEFEUP" },
+    personal: { icon: PersonalIcon, label: "Personal" },
+    terminal: { icon: TerminalIcon, label: "Terminal" },
+    university: { icon: UniversityIcon, label: "University" },
+    wearable: { icon: WearableIcon, label: "Wearable" },
+    web: { icon: WebIcon, label: "Web" },
 } as const satisfies Record<string, Tag>;
 
 export type TagId = keyof typeof tags;

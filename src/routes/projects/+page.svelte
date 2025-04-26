@@ -1,20 +1,21 @@
 <script lang="ts">
+    import type { Project as ProjectT } from "$lib/projects";
+
     import IconSelect from "$lib/components/IconSelect.svelte";
     import Page from "$lib/components/Page.svelte";
     import Project from "$lib/components/Project.svelte";
-    import type { Project as ProjectT } from "$lib/projects";
-    import { projects as _projects } from "$lib/projects";
-    import SortDateAsc from "$lib/icons/sort-date-ascending.svg?component";
-    import SortDateDesc from "$lib/icons/sort-date-descending.svg?component";
     import SortNameAsc from "$lib/icons/sort-alphabetical-ascending.svg?component";
     import SortNameDesc from "$lib/icons/sort-alphabetical-descending.svg?component";
+    import SortDateAsc from "$lib/icons/sort-date-ascending.svg?component";
+    import SortDateDesc from "$lib/icons/sort-date-descending.svg?component";
     import TagIcon from "$lib/icons/tag.svg?component";
     import TechIcon from "$lib/icons/technology.svg?component";
-    import { flip } from "svelte/animate";
-    import { tags, type TagId } from "$lib/tags";
+    import { projects as _projects } from "$lib/projects";
+    import { type TagId, tags } from "$lib/tags";
     import { technologies, type TechnologyId } from "$lib/technologies";
     import { myScale } from "$lib/transition/myscale";
     import { MetaTags } from "svelte-meta-tags";
+    import { flip } from "svelte/animate";
 
     const sortByDate = (a: ProjectT, b: ProjectT) => {
         if (a.endDate && b.endDate)
@@ -31,23 +32,23 @@
 
     const sortings = {
         "date-asc": {
-            label: "Date (oldest first)",
             icon: SortDateAsc,
+            label: "Date (oldest first)",
             sort: sortByDate,
         },
         "date-desc": {
-            label: "Date (newest first)",
             icon: SortDateDesc,
+            label: "Date (newest first)",
             sort: (a: ProjectT, b: ProjectT) => -sortByDate(a, b),
         },
         "name-asc": {
-            label: "Name (A-Z)",
             icon: SortNameAsc,
+            label: "Name (A-Z)",
             sort: sortByName,
         },
         "name-desc": {
-            label: "Name (Z-A)",
             icon: SortNameDesc,
+            label: "Name (Z-A)",
             sort: (a: ProjectT, b: ProjectT) => -sortByName(a, b),
         },
     } as const;

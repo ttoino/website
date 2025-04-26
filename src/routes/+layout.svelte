@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import Header from "$lib/components/Header.svelte";
+
     import "./style.css";
 
     let index = false;

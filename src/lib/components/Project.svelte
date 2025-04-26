@@ -1,8 +1,9 @@
 <script lang="ts">
     import type { Project } from "$lib/projects";
+
     import Github from "$lib/icons/github.svg?component";
     import OpenInNew from "$lib/icons/open-in-new.svg?component";
-    import { tags, type TagId } from "$lib/tags";
+    import { type TagId, tags } from "$lib/tags";
     import { technologies, type TechnologyId } from "$lib/technologies";
 
     export let project: Project;

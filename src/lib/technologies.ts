@@ -5,7 +5,6 @@ import CIcon from "./icons/technologies/c.svg?component";
 import CppIcon from "./icons/technologies/cpp.svg?component";
 import CssIcon from "./icons/technologies/css.svg?component";
 import FirebaseIcon from "./icons/technologies/firebase.svg?component";
-import PygameIcon from "./icons/technologies/pygame.svg?component";
 import HtmlIcon from "./icons/technologies/html.svg?component";
 import JavaIcon from "./icons/technologies/java.svg?component";
 import JavascriptIcon from "./icons/technologies/javascript.svg?component";
@@ -19,6 +18,7 @@ import PhpIcon from "./icons/technologies/php.svg?component";
 import PostgresqlIcon from "./icons/technologies/postgresql.svg?component";
 import PrimerIcon from "./icons/technologies/primer.svg?component";
 import PrologIcon from "./icons/technologies/prolog.svg?component";
+import PygameIcon from "./icons/technologies/pygame.svg?component";
 import PythonIcon from "./icons/technologies/python.svg?component";
 import RustIcon from "./icons/technologies/rust.svg?component";
 import SolrIcon from "./icons/technologies/solr.svg?component";
@@ -28,39 +28,39 @@ import ThreejsIcon from "./icons/technologies/threejs.svg?component";
 import TypescriptIcon from "./icons/technologies/typescript.svg?component";
 
 export interface Technology {
-    label: string;
     icon: typeof AntlrIcon;
+    label: string;
 }
 
 export const technologies = {
-    android: { label: "Android", icon: AndroidIcon },
-    antlr: { label: "ANTLR", icon: AntlrIcon },
-    bootstrap: { label: "Bootstrap", icon: BootstrapIcon },
-    c: { label: "C", icon: CIcon },
-    cpp: { label: "C++", icon: CppIcon },
-    css: { label: "CSS", icon: CssIcon },
-    firebase: { label: "Firebase", icon: FirebaseIcon },
-    html: { label: "HTML", icon: HtmlIcon },
-    java: { label: "Java", icon: JavaIcon },
-    javascript: { label: "JavaScript", icon: JavascriptIcon },
-    kotlin: { label: "Kotlin", icon: KotlinIcon },
-    ktor: { label: "Ktor", icon: KtorIcon },
-    lanterna: { label: "Lanterna", icon: LanternaIcon },
-    laravel: { label: "Laravel", icon: LaravelIcon },
-    mongodb: { label: "MongoDB", icon: MongodbIcon },
-    netty: { label: "Netty", icon: NettyIcon },
-    php: { label: "PHP", icon: PhpIcon },
-    postgresql: { label: "PostgreSQL", icon: PostgresqlIcon },
-    primer: { label: "Primer CSS", icon: PrimerIcon },
-    prolog: { label: "Prolog", icon: PrologIcon },
-    pygame: { label: "PyGame", icon: PygameIcon },
-    python: { label: "Python", icon: PythonIcon },
-    rust: { label: "Rust", icon: RustIcon },
-    solr: { label: "Solr", icon: SolrIcon },
-    svelte: { label: "Svelte/SvelteKit", icon: SvelteIcon },
-    tailwind: { label: "Tailwind CSS", icon: TailwindIcon },
-    threejs: { label: "Three.js", icon: ThreejsIcon },
-    typescript: { label: "TypeScript", icon: TypescriptIcon },
+    android: { icon: AndroidIcon, label: "Android" },
+    antlr: { icon: AntlrIcon, label: "ANTLR" },
+    bootstrap: { icon: BootstrapIcon, label: "Bootstrap" },
+    c: { icon: CIcon, label: "C" },
+    cpp: { icon: CppIcon, label: "C++" },
+    css: { icon: CssIcon, label: "CSS" },
+    firebase: { icon: FirebaseIcon, label: "Firebase" },
+    html: { icon: HtmlIcon, label: "HTML" },
+    java: { icon: JavaIcon, label: "Java" },
+    javascript: { icon: JavascriptIcon, label: "JavaScript" },
+    kotlin: { icon: KotlinIcon, label: "Kotlin" },
+    ktor: { icon: KtorIcon, label: "Ktor" },
+    lanterna: { icon: LanternaIcon, label: "Lanterna" },
+    laravel: { icon: LaravelIcon, label: "Laravel" },
+    mongodb: { icon: MongodbIcon, label: "MongoDB" },
+    netty: { icon: NettyIcon, label: "Netty" },
+    php: { icon: PhpIcon, label: "PHP" },
+    postgresql: { icon: PostgresqlIcon, label: "PostgreSQL" },
+    primer: { icon: PrimerIcon, label: "Primer CSS" },
+    prolog: { icon: PrologIcon, label: "Prolog" },
+    pygame: { icon: PygameIcon, label: "PyGame" },
+    python: { icon: PythonIcon, label: "Python" },
+    rust: { icon: RustIcon, label: "Rust" },
+    solr: { icon: SolrIcon, label: "Solr" },
+    svelte: { icon: SvelteIcon, label: "Svelte/SvelteKit" },
+    tailwind: { icon: TailwindIcon, label: "Tailwind CSS" },
+    threejs: { icon: ThreejsIcon, label: "Three.js" },
+    typescript: { icon: TypescriptIcon, label: "TypeScript" },
 } as const satisfies Record<string, Technology>;
 
 export type TechnologyId = keyof typeof technologies;

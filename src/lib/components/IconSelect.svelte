@@ -1,17 +1,20 @@
 <script lang="ts" generics="T extends string">
-    /* global T */
-    import { fly } from "svelte/transition";
     import type { ComponentType } from "svelte";
-    import { focusTrap } from "svelte-focus-trap";
+
     import { clickoutside } from "@svelte-put/clickoutside";
     import { shortcut } from "@svelte-put/shortcut";
+    import { pushState, replaceState } from "$app/navigation";
+    import { page } from "$app/stores";
     import CheckIcon from "$lib/icons/check.svg?component";
+    import { focusTrap } from "svelte-focus-trap";
+    /* global T */
+    import { fly } from "svelte/transition";
     import { fade } from "svelte/transition";
 
     interface BaseProps {
-        items: Record<T, { label: string; icon: ComponentType }>;
-        name: string;
+        items: Record<T, { icon: ComponentType; label: string; }>;
         label: string;
+        name: string;
     }
 
     interface SingleProps extends BaseProps {
@@ -20,13 +23,13 @@
     }
 
     interface MultipleProps extends BaseProps {
+        allIcon?: ComponentType;
+        icon: ComponentType;
         multiple: true;
         value: T[];
-        icon: ComponentType;
-        allIcon?: ComponentType;
     }
 
-    type $$Props = SingleProps | MultipleProps;
+    type $$Props = MultipleProps | SingleProps;
 
     export let multiple = false;
     export let items: $$Props["items"];
@@ -34,26 +37,40 @@
     export let name: $$Props["name"];
     export let label: $$Props["label"];
 
-    let open = false;
     let clicked = false;
 
+    $: open = $page.state[`${name}Open`];
     $: keys = Object.keys(items) as T[];
     $: selected = multiple ? undefined : items[value as T];
+
+    $: openFn = () => {
+        if (!open)
+            pushState("", {
+                [`${name}Open`]: true,
+            });
+    };
+
+    $: closeFn = () => {
+        if (open)
+            replaceState("", {
+                [`${name}Open`]: false,
+            });
+    };
 </script>
 
 <svelte:window
     use:shortcut={{
         enabled: open,
         trigger: {
+            callback: closeFn,
             key: "Escape",
-            callback: () => (open = false),
         },
     }}
 />
 
 <div class="relative">
     <button
-        on:click={() => (open = !open) && (clicked = true)}
+        on:click={() => (clicked = true) && openFn()}
         class="flex cursor-pointer flex-row items-center rounded-full p-2 transition-colors ease-in-out hover:bg-surface0"
         aria-haspopup="menu"
         id={name}
@@ -73,8 +90,7 @@
             transition:fly={{ y: 20 }}
             use:focusTrap
             use:clickoutside
-            on:clickoutside={() =>
-                clicked ? (clicked = false) : (open = false)}
+            on:clickoutside={() => (clicked ? (clicked = false) : closeFn())}
             role="menu"
             aria-labelledby={name}
             tabindex="-1"
