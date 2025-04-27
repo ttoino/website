@@ -1,6 +1,9 @@
 name: CI/CD
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -84,6 +87,8 @@ jobs:
         run: pnpm run build
 
   deploy:
+    name: Deploy
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs:
       - build
