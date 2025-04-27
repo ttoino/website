@@ -18,4 +18,6 @@ RUN pnpm run build
 
 FROM caddy:alpine AS prod
 
+COPY Caddyfile /etc/caddy/Caddyfile
+
 COPY --from=build /app/build /usr/share/caddy
