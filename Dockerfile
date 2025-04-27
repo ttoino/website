@@ -3,19 +3,18 @@ FROM node:current-alpine AS build
 WORKDIR /app
 
 COPY package.json .
-COPY package-lock.json .
+COPY pnpm-lock.yaml .
 
-RUN npm ci
+RUN corepack enable
+RUN pnpm install --frozen-lockfile
 
 COPY static static
 COPY src src
-COPY postcss.config.js .
 COPY svelte.config.js .
-COPY tailwind.config.js .
 COPY tsconfig.json .
 COPY vite.config.ts .
 
-RUN npm run build
+RUN pnpm run build
 
 FROM alpine:latest AS prod
 
