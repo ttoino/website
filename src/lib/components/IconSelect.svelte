@@ -1,18 +1,13 @@
 <script lang="ts" generics="T extends string">
-    import type { ComponentType } from "svelte";
+    import type { Component } from "svelte";
 
-    import { clickoutside } from "@svelte-put/clickoutside";
-    import { shortcut } from "@svelte-put/shortcut";
-    import { pushState, replaceState } from "$app/navigation";
-    import { page } from "$app/stores";
     import CheckIcon from "$lib/icons/check.svg?component";
-    import { focusTrap } from "svelte-focus-trap";
-    /* global T */
+    import { Select } from "bits-ui";
     import { fly } from "svelte/transition";
     import { fade } from "svelte/transition";
 
     interface BaseProps {
-        items: Record<T, { icon: ComponentType; label: string; }>;
+        items: Record<T, { icon: Component; label: string }>;
         label: string;
         name: string;
     }
@@ -23,157 +18,78 @@
     }
 
     interface MultipleProps extends BaseProps {
-        allIcon?: ComponentType;
-        icon: ComponentType;
+        allIcon?: Component;
+        icon: Component;
         multiple: true;
         value: T[];
     }
 
-    type $$Props = MultipleProps | SingleProps;
+    type Props = MultipleProps | SingleProps;
 
-    export let multiple = false;
-    export let items: $$Props["items"];
-    export let value: $$Props["value"];
-    export let name: $$Props["name"];
-    export let label: $$Props["label"];
+    let { value = $bindable(), ...props }: Props = $props();
 
-    let clicked = false;
-
-    $: open = $page.state[`${name}Open`];
-    $: keys = Object.keys(items) as T[];
-    $: selected = multiple ? undefined : items[value as T];
-
-    $: openFn = () => {
-        if (!open)
-            pushState("", {
-                [`${name}Open`]: true,
-            });
-    };
-
-    $: closeFn = () => {
-        if (open)
-            replaceState("", {
-                [`${name}Open`]: false,
-            });
-    };
+    let keys = $derived(Object.keys(props.items) as T[]);
+    let selected = $derived(!props.multiple ? props.items[value as T] : null);
+    let Icon = $derived(props.multiple ? props.icon : selected?.icon);
 </script>
 
-<svelte:window
-    use:shortcut={{
-        enabled: open,
-        trigger: {
-            callback: closeFn,
-            key: "Escape",
-        },
-    }}
-/>
-
-<div class="relative">
-    <button
-        on:click={() => (clicked = true) && openFn()}
-        class="flex cursor-pointer flex-row items-center rounded-full p-2 transition-colors ease-in-out hover:bg-surface0"
-        aria-haspopup="menu"
-        id={name}
+<Select.Root
+    type={props.multiple ? "multiple" : "single"}
+    bind:value={value as never}
+>
+    <Select.Trigger
+        class="hover:bg-ctp-surface0 flex cursor-pointer flex-row items-center rounded-full p-2 transition-colors ease-in-out"
     >
-        <svelte:component
-            this={multiple ? $$props["icon"] : selected?.icon}
-            class="text-2xl"
-            aria-hidden="true"
-        />
+        <Icon class="text-2xl" aria-hidden="true" />
 
-        <span class="sr-only">{label}</span>
-    </button>
-
-    {#if open}
-        <div
-            class="absolute right-0 z-10 flex max-h-80 w-60 translate-y-1 flex-col overflow-auto rounded bg-surface0 shadow"
-            transition:fly={{ y: 20 }}
-            use:focusTrap
-            use:clickoutside
-            on:clickoutside={() => (clicked ? (clicked = false) : closeFn())}
-            role="menu"
-            aria-labelledby={name}
-            tabindex="-1"
+        <span class="sr-only">{props.label}</span>
+    </Select.Trigger>
+    <Select.Portal>
+        <Select.Content
+            forceMount
+            sideOffset={8}
+            align="center"
+            collisionPadding={16}
+            class="bg-ctp-surface0 flex max-h-80 w-60 flex-col overflow-auto rounded-sm shadow-sm py-1"
         >
-            {#if multiple}
-                <label
-                    class="flex cursor-pointer flex-row items-center gap-2 p-2 outline-2 -outline-offset-2 outline-blue transition-colors ease-in-out focus-within:outline hover:bg-surface1"
-                >
-                    <input
-                        type="checkbox"
-                        checked={value.length === keys.length}
-                        on:change={() =>
-                            (value = value.length === keys.length ? [] : keys)}
-                        class="sr-only"
-                        role="menuitemcheckbox"
-                        aria-checked={value.length === keys.length}
-                    />
+            {#snippet child({ open, props: p, wrapperProps })}
+                <div {...wrapperProps}>
+                    {#if open}
+                        <div transition:fly={{ y: 20 }} {...p}>
+                            {#each keys as key (key)}
+                                <Select.Item
+                                    class="outline-ctp-blue hover:bg-ctp-surface1 focus-within:outline-solid flex cursor-pointer flex-row items-center gap-2 p-2 outline-none outline-2 -outline-offset-2 transition-colors ease-in-out"
+                                    value={key}
+                                >
+                                    {#snippet children({ selected })}
+                                        {@const item = props.items[key]}
+                                        {@const Icon = item.icon}
 
-                    <svelte:component
-                        this={$$props["allIcon"] ?? $$props["icon"]}
-                        class="text-2xl"
-                        aria-hidden="true"
-                    />
+                                        <Icon
+                                            class="text-2xl"
+                                            aria-hidden="true"
+                                        />
 
-                    <span>All</span>
+                                        <span>{item.label}</span>
 
-                    {#if value.length === keys.length}
-                        <span
-                            transition:fade={{ duration: 100 }}
-                            class="ml-auto text-2xl"
-                            aria-hidden="true"
-                        >
-                            <CheckIcon />
-                        </span>
+                                        {#if selected}
+                                            <span
+                                                transition:fade={{
+                                                    duration: 100,
+                                                }}
+                                                class="ml-auto text-2xl"
+                                                aria-hidden="true"
+                                            >
+                                                <CheckIcon />
+                                            </span>
+                                        {/if}
+                                    {/snippet}
+                                </Select.Item>
+                            {/each}
+                        </div>
                     {/if}
-                </label>
-            {/if}
-            {#each keys as item}
-                <label
-                    class="flex cursor-pointer flex-row items-center gap-2 p-2 outline-2 -outline-offset-2 outline-blue transition-colors ease-in-out focus-within:outline hover:bg-surface1"
-                >
-                    {#if multiple}
-                        <input
-                            type="checkbox"
-                            bind:group={value}
-                            value={item}
-                            class="sr-only"
-                            {name}
-                            role="menuitemcheckbox"
-                            aria-checked={value.includes(item)}
-                        />
-                    {:else}
-                        <input
-                            type="radio"
-                            bind:group={value}
-                            value={item}
-                            class="sr-only"
-                            {name}
-                            role="menuitemradio"
-                            aria-checked={value === item}
-                            on:click={() => (open = false)}
-                        />
-                    {/if}
-
-                    <svelte:component
-                        this={items[item].icon}
-                        class="text-2xl"
-                        aria-hidden="true"
-                    />
-
-                    <span>{items[item].label}</span>
-
-                    {#if multiple && value.includes(item)}
-                        <span
-                            transition:fade={{ duration: 100 }}
-                            class="ml-auto text-2xl"
-                            aria-hidden="true"
-                        >
-                            <CheckIcon />
-                        </span>
-                    {/if}
-                </label>
-            {/each}
-        </div>
-    {/if}
-</div>
+                </div>
+            {/snippet}
+        </Select.Content>
+    </Select.Portal>
+</Select.Root>
