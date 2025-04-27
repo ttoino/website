@@ -22,7 +22,7 @@ export interface Project {
     description?: string;
     endDate?: Date;
     id: string;
-    image?: string;
+    image?: typeof AocmImage;
     name: string;
     repo?: string;
     startDate: Date;

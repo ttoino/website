@@ -4,19 +4,19 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --animate-terminal-blink: terminal-blink 1s step-end infinite;
+    --animate-terminal-blink: terminal-blink 1s step-end infinite;
 
-  --font-mono: Iosevka Custom, Roboto Mono, monospace;
+    --font-mono: Iosevka Custom, Roboto Mono, monospace;
 
-  @keyframes terminal-blink {
-    0%,
-    100% {
-      opacity: 1;
+    @keyframes terminal-blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
     }
-    50% {
-      opacity: 0;
-    }
-  }
 }
 
 @layer base {

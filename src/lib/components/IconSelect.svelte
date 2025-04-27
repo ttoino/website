@@ -50,7 +50,7 @@
             sideOffset={8}
             align="center"
             collisionPadding={16}
-            class="bg-ctp-surface0 flex max-h-80 w-60 flex-col overflow-auto rounded-sm shadow-sm py-1"
+            class="bg-ctp-surface0 flex max-h-80 w-60 flex-col overflow-auto rounded-sm py-1 shadow-sm"
         >
             {#snippet child({ open, props: p, wrapperProps })}
                 <div {...wrapperProps}>
