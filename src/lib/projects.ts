@@ -53,7 +53,7 @@ export const projects = [
         startDate: new Date("2024-04-03"),
         tags: ["web", "personal", "university"],
         technologies: ["svelte", "tailwind", "typescript"],
-        url: "https://ementas.toino.pt",
+        // url: "https://ementas.toino.pt",
     },
     {
         description: "The top commiters per country",
@@ -177,7 +177,7 @@ export const projects = [
         startDate: new Date("2022-03-29"),
         tags: ["web", "personal"],
         technologies: ["css", "html", "javascript"],
-        url: "https://latex.toino.pt",
+        // url: "https://latex.toino.pt",
     },
     {
         description: "A turn-based strategy game inspired by Into the Breach",
