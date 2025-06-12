@@ -26,9 +26,9 @@
 >
     {#if project.image}
         <enhanced:img
-            src={project.image}
-            alt=""
             class="-m-2 mb-2 aspect-video h-auto w-[calc(--spacing(4)+100%)] max-w-[unset] object-cover shadow-inner md:-m-4 md:mb-2 md:w-[calc(--spacing(8)+100%)]"
+            alt=""
+            src={project.image}
         />
     {/if}
 
@@ -40,11 +40,12 @@
             {#each project.tags as tag, i (i)}
                 {@const Icon = tags[tag].icon}
 
-                <li title={tags[tag].label} class="flex">
+                <li class="flex" title={tags[tag].label}>
                     <button
                         class="-m-1 flex cursor-pointer p-1 transition-opacity"
                         class:opacity-40={!selectedTags.includes(tag)}
                         onclick={() => setTag(tag)}
+                        type="button"
                     >
                         <Icon aria-hidden="true" />
                         <span class="sr-only">{tags[tag].label}</span>
@@ -59,11 +60,12 @@
             {#each project.technologies as tech, i (i)}
                 {@const Icon = technologies[tech].icon}
 
-                <li title={technologies[tech].label} class="flex">
+                <li class="flex" title={technologies[tech].label}>
                     <button
                         class="-m-1 flex cursor-pointer p-1 transition-opacity"
                         class:opacity-40={!selectedTechnologies.includes(tech)}
                         onclick={() => setTechnology(tech)}
+                        type="button"
                     >
                         <Icon aria-hidden="true" />
                         <span class="sr-only">{technologies[tech].label}</span>
@@ -78,24 +80,28 @@
         class:bg-inherit={project.image}
     >
         {#if project.repo}
+            <!-- eslint-disable svelte/no-navigation-without-base -->
             <a
                 href={project.repo}
-                target="_blank"
                 rel="noopener noreferrer"
+                target="_blank"
                 title="Repository"
             >
+                <!-- eslint-enable svelte/no-navigation-without-base -->
                 <Github aria-hidden="true" />
                 <span class="sr-only">Repository</span>
             </a>
         {/if}
 
         {#if project.url}
+            <!-- eslint-disable svelte/no-navigation-without-base -->
             <a
                 href={project.url}
-                target="_blank"
                 rel="noopener noreferrer"
+                target="_blank"
                 title="Open project"
             >
+                <!-- eslint-enable svelte/no-navigation-without-base -->
                 <OpenInNew aria-hidden="true" />
                 <span class="sr-only">Open project</span>
             </a>

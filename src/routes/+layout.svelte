@@ -16,9 +16,9 @@
 </script>
 
 <div
+    class="grid h-full overflow-hidden motion-safe:transition-all"
     class:grid-rows-[auto_0fr]={index}
     class:grid-rows-[auto_1fr]={!index}
-    class="grid h-full overflow-hidden motion-safe:transition-all"
 >
     <Header {index} />
 

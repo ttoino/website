@@ -2,4 +2,4 @@
     import { MetaTags } from "svelte-meta-tags";
 </script>
 
-<MetaTags title="toino" description="My personal page and portfolio" />
+<MetaTags description="My personal page and portfolio" title="toino" />

@@ -13,8 +13,8 @@
 </script>
 
 <div
-    transition:fly={{ y: 32 }}
     class="col-span-full row-span-full w-full p-4 {className}"
+    transition:fly={{ y: 32 }}
 >
     {@render children?.()}
 </div>

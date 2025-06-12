@@ -1,4 +1,4 @@
-<script lang="ts" generics="T extends string">
+<script generics="T extends string" lang="ts">
     import type { Component } from "svelte";
 
     import CheckIcon from "$lib/icons/check.svg?component";
@@ -46,11 +46,11 @@
     </Select.Trigger>
     <Select.Portal>
         <Select.Content
-            forceMount
-            sideOffset={8}
+            class="bg-ctp-surface0 flex max-h-80 w-60 flex-col overflow-auto rounded-sm py-1 shadow-sm"
             align="center"
             collisionPadding={16}
-            class="bg-ctp-surface0 flex max-h-80 w-60 flex-col overflow-auto rounded-sm py-1 shadow-sm"
+            forceMount
+            sideOffset={8}
         >
             {#snippet child({ open, props: p, wrapperProps })}
                 <div {...wrapperProps}>
@@ -74,11 +74,11 @@
 
                                         {#if selected}
                                             <span
+                                                class="ml-auto text-2xl"
+                                                aria-hidden="true"
                                                 transition:fade={{
                                                     duration: 100,
                                                 }}
-                                                class="ml-auto text-2xl"
-                                                aria-hidden="true"
                                             >
                                                 <CheckIcon />
                                             </span>

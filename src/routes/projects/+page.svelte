@@ -86,8 +86,8 @@
 </script>
 
 <MetaTags
-    title="Projects • toino"
     description="My personal and university projects"
+    title="Projects • toino"
 />
 
 <Page class="max-w-(--breakpoint-xl) flex flex-col gap-2 md:gap-4">
@@ -95,28 +95,28 @@
         <h2 class="mr-auto text-4xl">Projects</h2>
 
         <IconSelect
-            bind:value={selectedTags}
-            items={tags}
-            multiple
-            icon={TagIcon}
             name="tags"
+            icon={TagIcon}
+            items={tags}
             label="Filter by tags"
-        />
-
-        <IconSelect
-            bind:value={selectedTechnologies}
-            items={technologies}
             multiple
-            icon={TechIcon}
-            name="technologies"
-            label="Filter by technologies"
+            bind:value={selectedTags}
         />
 
         <IconSelect
-            bind:value={sort}
-            items={sortings}
+            name="technologies"
+            icon={TechIcon}
+            items={technologies}
+            label="Filter by technologies"
+            multiple
+            bind:value={selectedTechnologies}
+        />
+
+        <IconSelect
             name="sorting"
+            items={sortings}
             label="Sort by"
+            bind:value={sort}
         />
     </div>
 
@@ -132,8 +132,8 @@
                 <Project
                     {project}
                     {selectedTags}
-                    {setTag}
                     {selectedTechnologies}
+                    {setTag}
                     {setTechnology}
                 />
             </div>
