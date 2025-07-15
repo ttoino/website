@@ -72,12 +72,12 @@
             .sort(sortings[sort].sort),
     );
 
-    const setTag = (tag: TagId) =>
+    const onSetTag = (tag: TagId) =>
         (selectedTags =
             selectedTags.length === 1 && selectedTags[0] === tag
                 ? (Object.keys(tags) as TagId[])
                 : [tag]);
-    const setTechnology = (technology: TechnologyId) =>
+    const onSetTechnology = (technology: TechnologyId) =>
         (selectedTechnologies =
             selectedTechnologies.length === 1 &&
             selectedTechnologies[0] === technology
@@ -130,11 +130,11 @@
                 animate:flip={{ duration: 300 }}
             >
                 <Project
+                    {onSetTag}
+                    {onSetTechnology}
                     {project}
                     {selectedTags}
                     {selectedTechnologies}
-                    {setTag}
-                    {setTechnology}
                 />
             </div>
         {/each}

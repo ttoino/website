@@ -7,17 +7,17 @@
     import { technologies, type TechnologyId } from "$lib/technologies";
 
     let {
+        onSetTag,
+        onSetTechnology,
         project,
         selectedTags,
         selectedTechnologies,
-        setTag,
-        setTechnology,
     }: {
+        onSetTag: (tag: TagId) => unknown;
+        onSetTechnology: (technology: TechnologyId) => unknown;
         project: Project;
         selectedTags: TagId[];
         selectedTechnologies: TechnologyId[];
-        setTag: (tag: TagId) => unknown;
-        setTechnology: (technology: TechnologyId) => unknown;
     } = $props();
 </script>
 
@@ -44,7 +44,7 @@
                     <button
                         class="-m-1 flex cursor-pointer p-1 transition-opacity"
                         class:opacity-40={!selectedTags.includes(tag)}
-                        onclick={() => setTag(tag)}
+                        onclick={() => onSetTag(tag)}
                         type="button"
                     >
                         <Icon aria-hidden="true" />
@@ -64,7 +64,7 @@
                     <button
                         class="-m-1 flex cursor-pointer p-1 transition-opacity"
                         class:opacity-40={!selectedTechnologies.includes(tech)}
-                        onclick={() => setTechnology(tech)}
+                        onclick={() => onSetTechnology(tech)}
                         type="button"
                     >
                         <Icon aria-hidden="true" />
