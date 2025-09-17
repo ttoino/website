@@ -8,6 +8,7 @@ import EmentasImage from "./images/projects/ementas.png?enhanced";
 import JmmImage from "./images/projects/jmm.png?enhanced";
 import LatexPreviewerImage from "./images/projects/latex-previewer.png?enhanced";
 import LuisImage from "./images/projects/luis.png?enhanced";
+import MarcelineImage from "./images/projects/mopidy-marceline.png?enhanced";
 import OotbImage from "./images/projects/ootb.png?enhanced";
 import ProggersImage from "./images/projects/proggers.png?enhanced";
 import SdleImage from "./images/projects/sdle.png?enhanced";
@@ -32,6 +33,36 @@ export interface Project {
 }
 
 export const projects = [
+    {
+        description:
+            "Material Symbols compatible font for all your meter/progress needs",
+        id: "meterial-symbols",
+        name: "Meterial Symbols",
+        repo: "https://github.com/ttoino/meterial-symbols",
+        startDate: new Date("2025-08-22"),
+        tags: ["personal"],
+        technologies: ["python"],
+    },
+    {
+        description:
+            "Mopidy extension with stylish frontend for controlling playback and browsing",
+        id: "mopidy-marceline",
+        image: MarcelineImage,
+        name: "Mopidy Marceline",
+        repo: "https://github.com/ttoino/mopidy-marceline",
+        startDate: new Date("2025-03-17"),
+        tags: ["native", "web", "personal"],
+        technologies: ["python", "svelte", "tailwind", "typescript"],
+    },
+    {
+        description: "Svelte library for Material 3 components",
+        id: "svelte-m3c",
+        name: "svelte-m3c",
+        repo: "https://github.com/ttoino/svelte-m3c",
+        startDate: new Date("2025-03-21"),
+        tags: ["web", "personal"],
+        technologies: ["svelte", "tailwind", "typescript"],
+    },
     {
         description: "The website you are currently on",
         id: "website",
