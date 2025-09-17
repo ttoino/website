@@ -80,28 +80,28 @@
         class:bg-inherit={project.image}
     >
         {#if project.repo}
-            <!-- eslint-disable svelte/no-navigation-without-base -->
+            <!-- eslint-disable svelte/no-navigation-without-resolve -->
             <a
                 href={project.repo}
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Repository"
             >
-                <!-- eslint-enable svelte/no-navigation-without-base -->
+                <!-- eslint-enable svelte/no-navigation-without-resolve -->
                 <Github aria-hidden="true" />
                 <span class="sr-only">Repository</span>
             </a>
         {/if}
 
         {#if project.url}
-            <!-- eslint-disable svelte/no-navigation-without-base -->
+            <!-- eslint-disable svelte/no-navigation-without-resolve -->
             <a
                 href={project.url}
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Open project"
             >
-                <!-- eslint-enable svelte/no-navigation-without-base -->
+                <!-- eslint-enable svelte/no-navigation-without-resolve -->
                 <OpenInNew aria-hidden="true" />
                 <span class="sr-only">Open project</span>
             </a>
