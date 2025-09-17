@@ -1,8 +1,12 @@
 <script lang="ts">
-    import { base } from "$app/paths";
+    import { resolve } from "$app/paths";
     import Github from "$lib/icons/github.svg?component";
 
-    export let index: boolean;
+    let {
+        index,
+    }: {
+        index: boolean;
+    } = $props();
 </script>
 
 <header
@@ -23,7 +27,7 @@
             class:md:translate-x-[-1ch]={!index}
             class:md:translate-x-[-50%]={index}
             class:text-6xl={index}
-            href="{base}/"
+            href={resolve("/")}
         >
             <h1
                 class="motion-safe:after:animate-terminal-blink before:invisible before:content-['\_'] after:content-['\_']"
@@ -37,7 +41,7 @@
             class:md:translate-y-0={!index}
             class:md:translate-y-20={index}
         >
-            <a href="{base}/projects">projects</a>
+            <a href={resolve("/projects")}>projects</a>
         </div>
 
         <div
