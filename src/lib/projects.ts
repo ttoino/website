@@ -34,8 +34,7 @@ export interface Project {
 
 export const projects = [
     {
-        description:
-            "Material Symbols compatible font for all your meter/progress needs",
+        description: "Variable icon font with meter/progress support",
         id: "meterial-symbols",
         name: "Meterial Symbols",
         repo: "https://github.com/ttoino/meterial-symbols",
@@ -44,8 +43,7 @@ export const projects = [
         technologies: ["python"],
     },
     {
-        description:
-            "Mopidy extension with stylish frontend for controlling playback and browsing",
+        description: "Stylish Mopidy frontend",
         id: "mopidy-marceline",
         image: MarcelineImage,
         name: "Mopidy Marceline",
@@ -55,16 +53,16 @@ export const projects = [
         technologies: ["python", "svelte", "tailwind", "typescript"],
     },
     {
-        description: "Svelte library for Material 3 components",
+        description: "Svelte + Tailwind library for Material 3 components",
         id: "svelte-m3c",
-        name: "svelte-m3c",
+        name: "Svelte M3C",
         repo: "https://github.com/ttoino/svelte-m3c",
         startDate: new Date("2025-03-21"),
         tags: ["web", "personal"],
         technologies: ["svelte", "tailwind", "typescript"],
     },
     {
-        description: "The website you are currently on",
+        description: "Personal website and portfolio",
         id: "website",
         image: WebsiteImage,
         name: "Website",
@@ -75,7 +73,7 @@ export const projects = [
         url: "https://toino.pt",
     },
     {
-        description: "A website that shows the menus for all UP restaurants",
+        description: "Website showing the menus for the University of Porto",
         endDate: new Date("2024-05-21"),
         id: "ementas",
         image: EmentasImage,
@@ -87,11 +85,11 @@ export const projects = [
         // url: "https://ementas.toino.pt",
     },
     {
-        description: "The top commiters per country",
+        description: "Website to track the top GitHub users per country",
         endDate: new Date("2023-12-15"),
         id: "top-commiters",
         image: TopCommitersImage,
-        name: "Top Commiters",
+        name: "Top commiters",
         repo: "https://github.com/ttoino/top-commiters",
         startDate: new Date("2023-05-24"),
         tags: ["web", "personal"],
@@ -111,7 +109,7 @@ export const projects = [
         url: "https://sgi.toino.pt",
     },
     {
-        description: "Search the League of Legends universe stories",
+        description: "League of Legends universe search engine",
         endDate: new Date("2023-12-23"),
         id: "luis",
         image: LuisImage,
@@ -123,7 +121,7 @@ export const projects = [
         url: "https://luis.toino.pt",
     },
     {
-        description: "Distributed and offline first shopping list web app",
+        description: "Distributed and offline-first shopping list web app",
         endDate: new Date("2023-12-22"),
         id: "sdle",
         image: SdleImage,
@@ -135,7 +133,7 @@ export const projects = [
         url: "https://sdle.toino.pt",
     },
     {
-        description: "A Java compiler written in Java\nWebsite by @limwa",
+        description: "(Almost) Java compiler written in Java",
         endDate: new Date("2023-05-28"),
         id: "jmm",
         image: JmmImage,
@@ -147,7 +145,7 @@ export const projects = [
         url: "https://jmm.toino.pt",
     },
     {
-        description: "A Trello clone",
+        description: "Trello clone",
         endDate: new Date("2023-03-16"),
         id: "atrellado",
         image: AtrelladoImage,
@@ -165,7 +163,7 @@ export const projects = [
         url: "https://atrellado.toino.pt",
     },
     {
-        description: "A digital online multiplayer board game",
+        description: "Digital online multiplayer board game",
         endDate: new Date("2023-01-17"),
         id: "center",
         image: CenterImage,
@@ -176,7 +174,7 @@ export const projects = [
         technologies: ["prolog"],
     },
     {
-        description: "A CLI to manage Advent of Code",
+        description: "CLI to manage Advent of Code problems and solutions",
         endDate: new Date("2022-12-03"),
         id: "aocm",
         image: AocmImage,
@@ -187,7 +185,7 @@ export const projects = [
         technologies: ["python"],
     },
     {
-        description: "A food delivery service",
+        description: "Food delivery service website",
         endDate: new Date("2022-06-14"),
         id: "xaufome",
         image: XaufomeImage,
@@ -199,7 +197,7 @@ export const projects = [
         url: "https://xaufome.toino.pt",
     },
     {
-        description: "A LaTeX previewer",
+        description: "Simple website to preview LaTeX code",
         endDate: new Date("2022-03-30"),
         id: "latex-previewer",
         image: LatexPreviewerImage,
@@ -211,7 +209,7 @@ export const projects = [
         // url: "https://latex.toino.pt",
     },
     {
-        description: "A turn-based strategy game inspired by Into the Breach",
+        description: "Turn-based strategy game inspired by Into the Breach",
         endDate: new Date("2022-01-30"),
         id: "ootb",
         image: OotbImage,
@@ -222,8 +220,7 @@ export const projects = [
         technologies: ["java", "lanterna"],
     },
     {
-        description:
-            "A single player game in a discord bot where the player runs away from robots",
+        description: "Single player robot avoidance game in a discord bot",
         endDate: new Date("2021-03-30"),
         id: "proggers",
         image: ProggersImage,
@@ -234,7 +231,7 @@ export const projects = [
         technologies: ["cpp", "typescript"],
     },
     {
-        description: "The classic solitaire klondike game",
+        description: "Classic solitaire klondike game",
         endDate: new Date("2021-01-24"),
         id: "solitaire",
         image: SolitaireImage,
@@ -245,7 +242,7 @@ export const projects = [
         technologies: ["pygame", "python"],
     },
     {
-        description: "A terminal based clone of Uno",
+        description: "Online multiplayer terminal-based clone of Uno",
         endDate: new Date("2019"),
         id: "bruno",
         name: "Bruno",
@@ -255,7 +252,7 @@ export const projects = [
         technologies: ["firebase", "java", "netty"],
     },
     {
-        description: "A custom watch face for Wear OS",
+        description: "Custom watch face for Wear OS",
         endDate: new Date("2019"),
         id: "watch-face",
         image: WatchFaceImage,
@@ -266,7 +263,7 @@ export const projects = [
         technologies: ["android", "java"],
     },
     {
-        description: "A custom animated wallpaper provider for OnePlus",
+        description: "Custom animated wallpaper provider for OnePlus",
         endDate: new Date("2019"),
         id: "opcwp",
         name: "OnePlus Custom Wallpaper Provider",
