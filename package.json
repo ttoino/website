@@ -30,7 +30,7 @@
         "eslint": "^9.35.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-perfectionist": "^4.15.0",
-        "eslint-plugin-svelte": "^3.12.3",
+        "eslint-plugin-svelte": "^3.12.4",
         "globals": "^16.4.0",
         "lottie-web": "^5.13.0",
         "prettier": "^3.6.2",
