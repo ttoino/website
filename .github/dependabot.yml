@@ -4,25 +4,19 @@ updates:
   - package-ecosystem: "npm"
     directory: "."
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     open-pull-requests-limit: 20
     groups:
-      eslint:
+      dependencies:
         patterns:
-          - "eslint"
-          - "@eslint/*"
-      tailwind:
-        patterns:
-          - "tailwindcss"
-          - "@tailwindcss/*"
-      svelte:
-        patterns:
-          - "svelte"
-          - "svelte-check"
-          - "@sveltejs/*"
+          - "*"
 
   - package-ecosystem: "github-actions"
     directory: "."
     schedule:
-      interval: "weekly"
+      interval: "monthly"
     open-pull-requests-limit: 20
+    groups:
+      dependencies:
+        patterns:
+          - "*"
