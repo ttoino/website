@@ -41,6 +41,7 @@ export const projects = [
         startDate: new Date("2025-08-22"),
         tags: ["personal"],
         technologies: ["python"],
+        url: "https://meterial.toino.pt",
     },
     {
         description: "Stylish Mopidy frontend",
