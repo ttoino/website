@@ -15,7 +15,7 @@
     },
     "devDependencies": {
         "@catppuccin/tailwindcss": "1.0.0",
-        "@eslint/compat": "^1.4.0",
+        "@eslint/compat": "^2.0.0",
         "@eslint/js": "^9.35.0",
         "@poppanator/sveltekit-svg": "^6.0.0",
         "@sveltejs/adapter-static": "^3.0.9",
@@ -35,7 +35,7 @@
         "lottie-web": "^5.13.0",
         "prettier": "^3.6.2",
         "prettier-plugin-svelte": "^3.4.0",
-        "prettier-plugin-tailwindcss": "^0.6.14",
+        "prettier-plugin-tailwindcss": "^0.7.2",
         "sharp": "^0.34.4",
         "svelte": "^5.38.10",
         "svelte-check": "^4.3.1",
