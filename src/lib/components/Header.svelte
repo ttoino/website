@@ -1,6 +1,8 @@
 <script lang="ts">
     import { resolve } from "$app/paths";
+    import { page } from "$app/state";
     import Github from "$lib/icons/github.svg?component";
+    import { label, links } from "$lib/links";
 
     let {
         index,
@@ -32,11 +34,21 @@
         </a>
 
         <div
-            class="flex flex-col gap-2 motion-safe:transition-all md:absolute md:flex-row md:gap-8"
-            class:md:translate-y-0={!index}
-            class:md:translate-y-20={index}
+            class="flex flex-col gap-2 motion-safe:transition-all md:absolute md:flex-row md:gap-8 {index
+                ? 'md:translate-y-20'
+                : 'md:translate-y-0'}"
         >
-            <a href={resolve("/projects")}>projects</a>
+            {#each links as link (link)}
+                {@const active = !!page.route.id?.startsWith(link)}
+
+                <a
+                    class="hover:underline"
+                    class:font-bold={active}
+                    href={resolve(link)}
+                >
+                    {label(link)}
+                </a>
+            {/each}
         </div>
 
         <div
