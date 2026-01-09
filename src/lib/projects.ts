@@ -1,29 +1,13 @@
+import type { Picture } from "vite-imagetools";
+
 import type { TagId } from "./tags";
 import type { TechnologyId } from "./technologies";
-
-import AocmImage from "./images/projects/aocm.png?enhanced";
-import AtrelladoImage from "./images/projects/atrellado.png?enhanced";
-import CenterImage from "./images/projects/center.png?enhanced";
-import EmentasImage from "./images/projects/ementas.png?enhanced";
-import JmmImage from "./images/projects/jmm.png?enhanced";
-import LatexPreviewerImage from "./images/projects/latex-previewer.png?enhanced";
-import LuisImage from "./images/projects/luis.png?enhanced";
-import MarcelineImage from "./images/projects/mopidy-marceline.png?enhanced";
-import OotbImage from "./images/projects/ootb.png?enhanced";
-import ProggersImage from "./images/projects/proggers.png?enhanced";
-import SdleImage from "./images/projects/sdle.png?enhanced";
-import SgiImage from "./images/projects/sgi.png?enhanced";
-import SolitaireImage from "./images/projects/solitaire.png?enhanced";
-import TopCommitersImage from "./images/projects/top-commiters.png?enhanced";
-import WatchFaceImage from "./images/projects/watch-face.png?enhanced";
-import WebsiteImage from "./images/projects/website.png?enhanced";
-import XaufomeImage from "./images/projects/xaufome.png?enhanced";
 
 export interface Project {
     description?: string;
     endDate?: Date;
     id: string;
-    image?: typeof AocmImage;
+    images?: ({ dark: Picture; light: Picture } | Picture)[];
     name: string;
     repo?: string;
     startDate: Date;
@@ -32,7 +16,7 @@ export interface Project {
     url?: string;
 }
 
-export const projects = [
+const projectsWithoutImage = [
     {
         description: "Variable icon font with meter/progress support",
         id: "meterial-symbols",
@@ -46,7 +30,6 @@ export const projects = [
     {
         description: "Stylish Mopidy frontend",
         id: "mopidy-marceline",
-        image: MarcelineImage,
         name: "Mopidy Marceline",
         repo: "https://github.com/ttoino/mopidy-marceline",
         startDate: new Date("2025-03-17"),
@@ -65,7 +48,6 @@ export const projects = [
     {
         description: "Personal website and portfolio",
         id: "website",
-        image: WebsiteImage,
         name: "Website",
         repo: "https://github.com/ttoino/website",
         startDate: new Date("2023-07-21"),
@@ -77,7 +59,6 @@ export const projects = [
         description: "Website showing the menus for the University of Porto",
         endDate: new Date("2024-05-21"),
         id: "ementas",
-        image: EmentasImage,
         name: "UP Menus",
         repo: "https://github.com/ttoino/ementas",
         startDate: new Date("2024-04-03"),
@@ -89,7 +70,6 @@ export const projects = [
         description: "Website to track the top GitHub users per country",
         endDate: new Date("2023-12-15"),
         id: "top-commiters",
-        image: TopCommitersImage,
         name: "Top commiters",
         repo: "https://github.com/ttoino/top-commiters",
         startDate: new Date("2023-05-24"),
@@ -101,7 +81,6 @@ export const projects = [
         description: "3D projects: two scenes and a game",
         endDate: new Date("2024-01-04"),
         id: "sgi",
-        image: SgiImage,
         name: "SGI",
         repo: "https://github.com/ttoino/feup-sgi",
         startDate: new Date("2023-09-20"),
@@ -113,7 +92,6 @@ export const projects = [
         description: "League of Legends universe search engine",
         endDate: new Date("2023-12-23"),
         id: "luis",
-        image: LuisImage,
         name: "LUIS",
         repo: "https://github.com/ttoino/feup-pri",
         startDate: new Date("2023-10-05"),
@@ -125,7 +103,6 @@ export const projects = [
         description: "Distributed and offline-first shopping list web app",
         endDate: new Date("2023-12-22"),
         id: "sdle",
-        image: SdleImage,
         name: "SDLE",
         repo: "https://github.com/ttoino/feup-sdle",
         startDate: new Date("2023-11-08"),
@@ -137,7 +114,6 @@ export const projects = [
         description: "(Almost) Java compiler written in Java",
         endDate: new Date("2023-05-28"),
         id: "jmm",
-        image: JmmImage,
         name: "Java--",
         repo: "https://github.com/ttoino/feup-c",
         startDate: new Date("2023-03-15"),
@@ -149,7 +125,6 @@ export const projects = [
         description: "Trello clone",
         endDate: new Date("2023-03-16"),
         id: "atrellado",
-        image: AtrelladoImage,
         name: "Atrellado",
         repo: "https://github.com/ttoino/feup-lbaw",
         startDate: new Date("2022-09-12"),
@@ -167,7 +142,6 @@ export const projects = [
         description: "Digital online multiplayer board game",
         endDate: new Date("2023-01-17"),
         id: "center",
-        image: CenterImage,
         name: "Center",
         repo: "https://github.com/ttoino/feup-pfl-proj2",
         startDate: new Date("2022-12-20"),
@@ -178,7 +152,6 @@ export const projects = [
         description: "CLI to manage Advent of Code problems and solutions",
         endDate: new Date("2022-12-03"),
         id: "aocm",
-        image: AocmImage,
         name: "Advent of Code Manager",
         repo: "https://github.com/ttoino/advent-of-code-manager",
         startDate: new Date("2022-07-26"),
@@ -189,7 +162,6 @@ export const projects = [
         description: "Food delivery service website",
         endDate: new Date("2022-06-14"),
         id: "xaufome",
-        image: XaufomeImage,
         name: "Xau Fome",
         repo: "https://github.com/ttoino/feup-ltw-proj",
         startDate: new Date("2022-04-01"),
@@ -201,7 +173,6 @@ export const projects = [
         description: "Simple website to preview LaTeX code",
         endDate: new Date("2022-03-30"),
         id: "latex-previewer",
-        image: LatexPreviewerImage,
         name: "LaTeX Previewer",
         repo: "https://github.com/ttoino/latex-previewer",
         startDate: new Date("2022-03-29"),
@@ -213,7 +184,6 @@ export const projects = [
         description: "Turn-based strategy game inspired by Into the Breach",
         endDate: new Date("2022-01-30"),
         id: "ootb",
-        image: OotbImage,
         name: "Out of the Breach",
         repo: "https://github.com/ttoino/feup-ldts-proj",
         startDate: new Date("2021-12-27"),
@@ -224,7 +194,6 @@ export const projects = [
         description: "Single player robot avoidance game in a discord bot",
         endDate: new Date("2021-03-30"),
         id: "proggers",
-        image: ProggersImage,
         name: "Proggers",
         repo: "https://github.com/ttoino/proggers-discord-bot",
         startDate: new Date("2021-03-29"),
@@ -235,7 +204,6 @@ export const projects = [
         description: "Classic solitaire klondike game",
         endDate: new Date("2021-01-24"),
         id: "solitaire",
-        image: SolitaireImage,
         name: "Solitaire",
         repo: "https://github.com/ttoino/feup-fpro-solitaire",
         startDate: new Date("2020-12-14"),
@@ -256,7 +224,6 @@ export const projects = [
         description: "Custom watch face for Wear OS",
         endDate: new Date("2019"),
         id: "watch-face",
-        image: WatchFaceImage,
         name: "Custom Watch Face",
         repo: "https://github.com/ttoino/custom-watch-face",
         startDate: new Date("2019"),
@@ -274,3 +241,40 @@ export const projects = [
         technologies: ["android", "java"],
     },
 ] as const satisfies readonly Project[];
+
+const projectImages: Record<string, Picture> = import.meta.glob(
+    ["./*/*.png", "./*/dark/*.png", "./*/light/*.png"],
+    {
+        base: "./images/projects",
+        eager: true,
+        import: "default",
+        query: "?enhanced",
+    },
+);
+
+export const projects = projectsWithoutImage.map((project) => {
+    const darkImages: Picture[] = [];
+    const lightImages: Picture[] = [];
+    const images: Picture[] = [];
+
+    for (const [name, image] of Object.entries(projectImages)) {
+        if (!name.includes(project.id)) continue;
+
+        if (name.includes("dark")) darkImages.push(image);
+        else if (name.includes("light")) lightImages.push(image);
+        else images.push(image);
+    }
+
+    return {
+        ...project,
+        images:
+            darkImages.length > 0 && darkImages.length === lightImages.length
+                ? darkImages.map((image, i) => ({
+                      dark: image,
+                      light: lightImages[i],
+                  }))
+                : images.length > 0
+                  ? images
+                  : undefined,
+    };
+});

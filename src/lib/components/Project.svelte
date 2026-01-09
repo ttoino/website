@@ -6,6 +6,8 @@
     import { type TagId, tags } from "$lib/tags";
     import { technologies, type TechnologyId } from "$lib/technologies";
 
+    import Carousel from "./Carousel.svelte";
+
     let {
         onSetTag,
         onSetTechnology,
@@ -24,15 +26,17 @@
 <article
     class="bg-ctp-mantle relative flex flex-col overflow-hidden rounded-md p-2 md:p-4"
 >
-    {#if project.image}
-        <enhanced:img
-            class="-m-2 mb-2 aspect-video h-auto w-[calc(--spacing(4)+100%)] max-w-[unset] object-cover shadow-inner md:-m-4 md:mb-2 md:w-[calc(--spacing(8)+100%)]"
-            alt=""
-            src={project.image}
+    {#if project.images}
+        <Carousel
+            class="-m-2 !mb-2 md:-m-4"
+            imageClass="aspect-video"
+            images={project.images}
         />
     {/if}
 
-    <h3 class="text-2xl" class:mr-4={!project.image}>{project.name}</h3>
+    <h3 class="text-2xl" class:mr-4={!project.images}>
+        {project.name}
+    </h3>
     <p class="mb-auto">{project.description}</p>
 
     {#if project.tags}
@@ -77,7 +81,7 @@
 
     <div
         class="absolute right-0 top-0 flex flex-row-reverse gap-2 rounded-bl-md p-2 text-2xl"
-        class:bg-inherit={project.image}
+        class:bg-inherit={!!project.images}
     >
         {#if project.repo}
             <!-- eslint-disable svelte/no-navigation-without-resolve -->
