@@ -31,6 +31,7 @@
             class="-m-2 mb-2! md:-m-4"
             imageClass="aspect-video"
             images={project.images}
+            sizes="640px"
         />
     {/if}
 

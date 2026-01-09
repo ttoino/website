@@ -1,7 +1,7 @@
 <script lang="ts">
+    import type { Images } from "$lib/projects";
+
     import { MediaQuery } from "svelte/reactivity";
-    import { fade } from "svelte/transition";
-    import { type Picture } from "vite-imagetools";
 
     let {
         automatic: baseAutomatic,
@@ -9,12 +9,14 @@
         imageClass = "",
         images,
         interval = 2500,
+        sizes,
     }: {
         automatic?: boolean;
         class?: string;
         imageClass?: string;
-        images: ({ dark: Picture; light: Picture } | Picture)[];
+        images: Images;
         interval?: number;
+        sizes?: string;
     } = $props();
 
     let currentIndex = $state(0);
@@ -52,27 +54,29 @@
     role="img"
 >
     {#each images as image, i (i)}
-        {#if currentIndex === i}
-            <div transition:fade>
-                {#if "dark" in image}
-                    <enhanced:img
-                        class="w-full dark:hidden {imageClass}"
-                        alt=""
-                        src={image.light}
-                    />
-                    <enhanced:img
-                        class="w-full not-dark:hidden {imageClass}"
-                        alt=""
-                        src={image.dark}
-                    />
-                {:else}
-                    <enhanced:img
-                        class="w-full {imageClass}"
-                        alt=""
-                        src={image}
-                    />
-                {/if}
-            </div>
+        {#if "dark" in image}
+            <enhanced:img
+                class="size-full transition-opacity duration-500 dark:hidden {imageClass}"
+                class:opacity-0={currentIndex !== i}
+                alt=""
+                {sizes}
+                src={image.light}
+            />
+            <enhanced:img
+                class="size-full transition-opacity duration-500 not-dark:hidden {imageClass}"
+                class:opacity-0={currentIndex !== i}
+                alt=""
+                {sizes}
+                src={image.dark}
+            />
+        {:else}
+            <enhanced:img
+                class="size-full transition-opacity duration-500 {imageClass}"
+                class:opacity-0={currentIndex !== i}
+                alt=""
+                {sizes}
+                src={image}
+            />
         {/if}
     {/each}
 </div>

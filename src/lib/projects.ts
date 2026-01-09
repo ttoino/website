@@ -3,11 +3,13 @@ import type { Picture } from "vite-imagetools";
 import type { TagId } from "./tags";
 import type { TechnologyId } from "./technologies";
 
+export type Images = ({ dark: Picture; light: Picture } | Picture)[];
+
 export interface Project {
     description?: string;
     endDate?: Date;
     id: string;
-    images?: ({ dark: Picture; light: Picture } | Picture)[];
+    images?: Images;
     name: string;
     repo?: string;
     startDate: Date;
@@ -248,7 +250,10 @@ const projectImages: Record<string, Picture> = import.meta.glob(
         base: "./images/projects",
         eager: true,
         import: "default",
-        query: "?enhanced",
+        query: {
+            enhanced: true,
+            w: "640;1280;1920",
+        },
     },
 );
 
