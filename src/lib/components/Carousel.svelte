@@ -1,28 +1,36 @@
 <script lang="ts">
-    import type { Picture } from "vite-imagetools";
-
+    import { MediaQuery } from "svelte/reactivity";
     import { fade } from "svelte/transition";
+    import { type Picture } from "vite-imagetools";
 
     let {
-        automatic = false,
+        automatic: baseAutomatic,
         class: className = "",
         imageClass = "",
         images,
+        interval = 2500,
     }: {
         automatic?: boolean;
         class?: string;
         imageClass?: string;
         images: ({ dark: Picture; light: Picture } | Picture)[];
+        interval?: number;
     } = $props();
 
     let currentIndex = $state(0);
     let timer = $state<number | undefined>();
 
-    const setTimer = () =>
-        void (timer = setInterval(
-            () => void (currentIndex = (currentIndex + 1) % images.length),
-            2500,
-        ));
+    const noMouse = new MediaQuery("pointer: coarse");
+
+    let automatic = $derived(baseAutomatic ?? noMouse.current);
+
+    let setTimer = $derived(
+        () =>
+            void (timer = setInterval(
+                () => void (currentIndex = (currentIndex + 1) % images.length),
+                interval,
+            )),
+    );
 
     $effect(() => {
         if (!automatic || images.length == 0) return;
@@ -48,18 +56,18 @@
             <div transition:fade>
                 {#if "dark" in image}
                     <enhanced:img
-                        class="w-full object-cover dark:hidden {imageClass}"
+                        class="w-full dark:hidden {imageClass}"
                         alt=""
                         src={image.light}
                     />
                     <enhanced:img
-                        class="not-dark:hidden w-full object-cover {imageClass}"
+                        class="w-full not-dark:hidden {imageClass}"
                         alt=""
                         src={image.dark}
                     />
                 {:else}
                     <enhanced:img
-                        class="w-full object-cover {imageClass}"
+                        class="w-full {imageClass}"
                         alt=""
                         src={image}
                     />

@@ -38,7 +38,7 @@
     bind:value={value as never}
 >
     <Select.Trigger
-        class="hover:bg-ctp-surface0 flex cursor-pointer flex-row items-center rounded-full p-2 transition-colors ease-in-out"
+        class="flex cursor-pointer flex-row items-center rounded-full p-2 transition-colors ease-in-out hover:bg-ctp-surface0"
     >
         <Icon class="text-2xl" aria-hidden="true" />
 
@@ -46,7 +46,7 @@
     </Select.Trigger>
     <Select.Portal>
         <Select.Content
-            class="bg-ctp-surface0 flex max-h-80 w-60 flex-col overflow-auto rounded-sm py-1 shadow-sm"
+            class="flex max-h-80 w-60 flex-col overflow-auto rounded-sm bg-ctp-surface0 py-1 shadow-sm"
             align="center"
             collisionPadding={16}
             forceMount
@@ -58,7 +58,7 @@
                         <div transition:fly={{ y: 20 }} {...p}>
                             {#each keys as key (key)}
                                 <Select.Item
-                                    class="outline-ctp-blue hover:bg-ctp-surface1 focus-within:outline-solid flex cursor-pointer flex-row items-center gap-2 p-2 outline-none outline-2 -outline-offset-2 transition-colors ease-in-out"
+                                    class="flex cursor-pointer flex-row items-center gap-2 p-2 outline-2 -outline-offset-2 outline-ctp-blue transition-colors ease-in-out outline-none focus-within:outline-solid hover:bg-ctp-surface1"
                                     value={key}
                                 >
                                     {#snippet children({ selected })}

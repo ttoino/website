@@ -24,11 +24,11 @@
 </script>
 
 <article
-    class="bg-ctp-mantle relative flex flex-col overflow-hidden rounded-md p-2 md:p-4"
+    class="relative flex flex-col overflow-hidden rounded-md bg-ctp-mantle p-2 md:p-4"
 >
     {#if project.images}
         <Carousel
-            class="-m-2 !mb-2 md:-m-4"
+            class="-m-2 mb-2! md:-m-4"
             imageClass="aspect-video"
             images={project.images}
         />
@@ -80,7 +80,7 @@
     {/if}
 
     <div
-        class="absolute right-0 top-0 flex flex-row-reverse gap-2 rounded-bl-md p-2 text-2xl"
+        class="absolute top-0 right-0 flex flex-row-reverse gap-2 rounded-bl-md p-2 text-2xl"
         class:bg-inherit={!!project.images}
     >
         {#if project.repo}

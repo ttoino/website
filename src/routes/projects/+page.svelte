@@ -90,7 +90,7 @@
     title="Projects • toino"
 />
 
-<Page class="max-w-(--breakpoint-xl) flex flex-col gap-2 md:gap-4">
+<Page class="flex max-w-(--breakpoint-2xl) flex-col gap-2 md:gap-4">
     <div class="flex flex-row items-center gap-1">
         <h2 class="mr-auto text-4xl">Projects</h2>
 
@@ -121,7 +121,7 @@
     </div>
 
     <div
-        class="relative grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fill,minmax(--spacing(64),1fr))]"
+        class="relative grid grid-cols-1 gap-4 sm:grid-cols-[repeat(auto-fill,minmax(--spacing(80),1fr))]"
     >
         {#each projects as project (project.id)}
             <div

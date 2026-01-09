@@ -10,27 +10,22 @@
 </script>
 
 <header
-    class="bg-ctp-crust sticky top-0 z-10 grid flex-1 content-center items-start justify-stretch justify-items-stretch overflow-clip text-xl duration-1000 focus-within:grid-rows-[1fr] hover:grid-rows-[1fr] motion-safe:transition-all md:grid-rows-[1fr] md:items-stretch"
+    class="sticky top-0 z-10 grid flex-1 content-center items-start justify-stretch justify-items-stretch overflow-clip bg-ctp-crust text-xl duration-1000 focus-within:grid-rows-[1fr] hover:grid-rows-[1fr] motion-safe:transition-all md:grid-rows-[1fr] md:items-stretch"
     class:grid-rows-[0fr]={!index}
     class:grid-rows-[1fr]={index}
     class:grow-0={!index}
 >
     <nav
-        class="my-auto flex min-h-[2.75rem] flex-col items-center justify-center gap-2 p-2 md:m-0 md:gap-4 md:p-4"
+        class="my-auto flex min-h-11 flex-col items-center justify-center gap-2 p-2 md:m-0 md:gap-4 md:p-4"
     >
         <a
-            class="motion-safe:transition-all md:absolute"
-            class:md:left-4={!index}
-            class:md:left-[50%]={index}
-            class:md:text-9xl={index}
-            class:md:text-xl={!index}
-            class:md:translate-x-[-1ch]={!index}
-            class:md:translate-x-[-50%]={index}
-            class:text-6xl={index}
+            class="motion-safe:transition-all md:absolute {index
+                ? 'text-6xl md:left-1/2 md:-translate-x-1/2 md:text-9xl'
+                : 'hover:underline md:left-4 md:-translate-x-[1ch] md:text-xl'}"
             href={resolve("/")}
         >
             <h1
-                class="motion-safe:after:animate-terminal-blink before:invisible before:content-['\_'] after:content-['\_']"
+                class="before:invisible before:content-['\_'] after:content-['\_'] motion-safe:after:animate-terminal-blink"
             >
                 toino
             </h1>

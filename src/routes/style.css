@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "@catppuccin/tailwindcss/mocha.css";
 
-@plugin '@tailwindcss/typography';
+@plugin "@tailwindcss/typography";
 
 @theme {
     --animate-terminal-blink: terminal-blink 1s step-end infinite;
@@ -20,6 +20,10 @@
 }
 
 @layer base {
+    img {
+        object-fit: cover;
+    }
+
     svg {
         width: 1em;
         height: 1em;

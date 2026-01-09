@@ -23,7 +23,7 @@
     <Header {index} />
 
     <main
-        class="grid grid-cols-[1fr] grid-rows-[1fr] justify-items-center overflow-auto"
+        class="grid grid-cols-1 grid-rows-1 justify-items-center overflow-hidden"
     >
         {@render children?.()}
     </main>
