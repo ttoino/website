@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Project } from "$lib/projects";
 
+    import { resolve } from "$app/paths";
     import Github from "$lib/icons/github.svg?component";
     import OpenInNew from "$lib/icons/open-in-new.svg?component";
     import { type TagId, tags } from "$lib/tags";
@@ -36,9 +37,14 @@
     {/if}
 
     <h3 class="text-2xl" class:mr-4={!project.images}>
-        {project.name}
+        <a
+            class="hover:underline"
+            href={resolve("/projects/[project]", { project: project.id })}
+        >
+            {project.name}
+        </a>
     </h3>
-    <p class="mb-auto">{project.description}</p>
+    <p class="mb-auto">{project.description?.at(0)}</p>
 
     {#if project.tags}
         <ul class="mt-2 flex flex-row flex-wrap gap-2 text-2xl">

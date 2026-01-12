@@ -6,7 +6,7 @@ import type { TechnologyId } from "./technologies";
 export type Images = ({ dark: Picture; light: Picture } | Picture)[];
 
 export interface Project {
-    description?: string;
+    description?: string[];
     endDate?: Date;
     id: string;
     images?: Images;
@@ -20,7 +20,7 @@ export interface Project {
 
 const projectsWithoutImage = [
     {
-        description: "Variable icon font with meter/progress support",
+        description: ["Variable icon font with meter/progress support"],
         id: "meterial-symbols",
         name: "Meterial Symbols",
         repo: "https://github.com/ttoino/meterial-symbols",
@@ -30,7 +30,7 @@ const projectsWithoutImage = [
         url: "https://meterial.toino.pt",
     },
     {
-        description: "Stylish Mopidy frontend",
+        description: ["Stylish Mopidy frontend"],
         id: "mopidy-marceline",
         name: "Mopidy Marceline",
         repo: "https://github.com/ttoino/mopidy-marceline",
@@ -39,16 +39,17 @@ const projectsWithoutImage = [
         technologies: ["python", "svelte", "tailwind", "typescript"],
     },
     {
-        description: "Svelte + Tailwind library for Material 3 components",
+        description: ["Svelte + Tailwind library for Material 3 components"],
         id: "svelte-m3c",
         name: "Svelte M3C",
         repo: "https://github.com/ttoino/svelte-m3c",
         startDate: new Date("2025-03-21"),
         tags: ["web", "personal"],
         technologies: ["svelte", "tailwind", "typescript"],
+        url: "https://svelte-m3c.toino.pt",
     },
     {
-        description: "Personal website and portfolio",
+        description: ["Personal website and portfolio"],
         id: "website",
         name: "Website",
         repo: "https://github.com/ttoino/website",
@@ -58,7 +59,7 @@ const projectsWithoutImage = [
         url: "https://toino.pt",
     },
     {
-        description: "Website showing the menus for the University of Porto",
+        description: ["Website showing the menus for the University of Porto"],
         endDate: new Date("2024-05-21"),
         id: "ementas",
         name: "UP Menus",
@@ -69,7 +70,7 @@ const projectsWithoutImage = [
         // url: "https://ementas.toino.pt",
     },
     {
-        description: "Website to track the top GitHub users per country",
+        description: ["Website to track the top GitHub users per country"],
         endDate: new Date("2023-12-15"),
         id: "top-commiters",
         name: "Top commiters",
@@ -80,7 +81,7 @@ const projectsWithoutImage = [
         url: "https://commits.toino.pt",
     },
     {
-        description: "3D projects: two scenes and a game",
+        description: ["3D projects: two scenes and a game"],
         endDate: new Date("2024-01-04"),
         id: "sgi",
         name: "SGI",
@@ -91,7 +92,7 @@ const projectsWithoutImage = [
         url: "https://sgi.toino.pt",
     },
     {
-        description: "League of Legends universe search engine",
+        description: ["League of Legends universe search engine"],
         endDate: new Date("2023-12-23"),
         id: "luis",
         name: "LUIS",
@@ -102,7 +103,7 @@ const projectsWithoutImage = [
         url: "https://luis.toino.pt",
     },
     {
-        description: "Distributed and offline-first shopping list web app",
+        description: ["Distributed and offline-first shopping list web app"],
         endDate: new Date("2023-12-22"),
         id: "sdle",
         name: "SDLE",
@@ -113,7 +114,7 @@ const projectsWithoutImage = [
         url: "https://sdle.toino.pt",
     },
     {
-        description: "(Almost) Java compiler written in Java",
+        description: ["(Almost) Java compiler written in Java"],
         endDate: new Date("2023-05-28"),
         id: "jmm",
         name: "Java--",
@@ -124,7 +125,7 @@ const projectsWithoutImage = [
         url: "https://jmm.toino.pt",
     },
     {
-        description: "Trello clone",
+        description: ["Trello clone"],
         endDate: new Date("2023-03-16"),
         id: "atrellado",
         name: "Atrellado",
@@ -141,7 +142,7 @@ const projectsWithoutImage = [
         url: "https://atrellado.toino.pt",
     },
     {
-        description: "Digital online multiplayer board game",
+        description: ["Digital online multiplayer board game"],
         endDate: new Date("2023-01-17"),
         id: "center",
         name: "Center",
@@ -151,7 +152,7 @@ const projectsWithoutImage = [
         technologies: ["prolog"],
     },
     {
-        description: "CLI to manage Advent of Code problems and solutions",
+        description: ["CLI to manage Advent of Code problems and solutions"],
         endDate: new Date("2022-12-03"),
         id: "aocm",
         name: "Advent of Code Manager",
@@ -161,7 +162,7 @@ const projectsWithoutImage = [
         technologies: ["python"],
     },
     {
-        description: "Food delivery service website",
+        description: ["Food delivery service website"],
         endDate: new Date("2022-06-14"),
         id: "xaufome",
         name: "Xau Fome",
@@ -172,7 +173,7 @@ const projectsWithoutImage = [
         url: "https://xaufome.toino.pt",
     },
     {
-        description: "Simple website to preview LaTeX code",
+        description: ["Simple website to preview LaTeX code"],
         endDate: new Date("2022-03-30"),
         id: "latex-previewer",
         name: "LaTeX Previewer",
@@ -183,7 +184,7 @@ const projectsWithoutImage = [
         // url: "https://latex.toino.pt",
     },
     {
-        description: "Turn-based strategy game inspired by Into the Breach",
+        description: ["Turn-based strategy game inspired by Into the Breach"],
         endDate: new Date("2022-01-30"),
         id: "ootb",
         name: "Out of the Breach",
@@ -193,7 +194,7 @@ const projectsWithoutImage = [
         technologies: ["java", "lanterna"],
     },
     {
-        description: "Single player robot avoidance game in a discord bot",
+        description: ["Single player robot avoidance game in a discord bot"],
         endDate: new Date("2021-03-30"),
         id: "proggers",
         name: "Proggers",
@@ -203,7 +204,7 @@ const projectsWithoutImage = [
         technologies: ["cpp", "typescript"],
     },
     {
-        description: "Classic solitaire klondike game",
+        description: ["Classic solitaire klondike game"],
         endDate: new Date("2021-01-24"),
         id: "solitaire",
         name: "Solitaire",
@@ -213,7 +214,7 @@ const projectsWithoutImage = [
         technologies: ["pygame", "python"],
     },
     {
-        description: "Online multiplayer terminal-based clone of Uno",
+        description: ["Online multiplayer terminal-based clone of Uno"],
         endDate: new Date("2019"),
         id: "bruno",
         name: "Bruno",
@@ -223,7 +224,7 @@ const projectsWithoutImage = [
         technologies: ["firebase", "java", "netty"],
     },
     {
-        description: "Custom watch face for Wear OS",
+        description: ["Custom watch face for Wear OS"],
         endDate: new Date("2019"),
         id: "watch-face",
         name: "Custom Watch Face",
@@ -233,7 +234,7 @@ const projectsWithoutImage = [
         technologies: ["android", "java"],
     },
     {
-        description: "Custom animated wallpaper provider for OnePlus",
+        description: ["Custom animated wallpaper provider for OnePlus"],
         endDate: new Date("2019"),
         id: "opcwp",
         name: "OnePlus Custom Wallpaper Provider",
