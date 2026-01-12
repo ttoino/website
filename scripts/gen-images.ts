@@ -172,6 +172,18 @@ await project("sgi", async (page, screenshot) => {
 });
 
 await project(
+    "svelte-m3c",
+    async (page, screenshot) => {
+        await page.goto("https://svelte-m3c-next.toino.pt/components");
+        await screenshot();
+
+        await page.goto("https://svelte-m3c-next.toino.pt/components/button");
+        await screenshot();
+    },
+    true,
+);
+
+await project(
     "top-commiters",
     async (page, screenshot) => {
         await page.goto("https://commits.toino.pt/PT/contribs/");
