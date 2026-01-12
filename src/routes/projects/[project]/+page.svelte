@@ -125,12 +125,18 @@
                 <span class="sr-only">Back to projects</span>
             </a>
 
-            <Title>{data.project.name}</Title>
+            <div class="flex flex-col">
+                <Title>{data.project.name}</Title>
+                <p>{data.project.tagline}</p>
+            </div>
         </header>
 
         {#if data.project.repo || data.project.url}
             <aside
-                class="mt-4 flex flex-col gap-2 text-xl md:float-end md:ms-4 md:max-w-100"
+                class="mt-4 flex flex-col gap-2 text-xl {data.project
+                    .description
+                    ? 'md:float-end md:ms-8 md:max-w-80'
+                    : ''}"
             >
                 {#if data.project.url}
                     {@render iconLink(
@@ -171,9 +177,9 @@
             </aside>
         {/if}
 
-        <div class="mt-4 text-lg">
+        <div class="mt-4 text-justify text-lg">
             {#each data.project.description as par, i (i)}
-                <p>{par}</p>
+                <p class="not-first:mt-2">{par}</p>
             {/each}
         </div>
     </article>

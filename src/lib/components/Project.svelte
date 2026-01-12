@@ -44,7 +44,7 @@
             {project.name}
         </a>
     </h3>
-    <p class="mb-auto">{project.description?.at(0)}</p>
+    <p class="mb-auto">{project.tagline}</p>
 
     {#if project.tags}
         <ul class="mt-2 flex flex-row flex-wrap gap-2 text-2xl">
