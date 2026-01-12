@@ -4,6 +4,7 @@
     import IconSelect from "$lib/components/IconSelect.svelte";
     import Page from "$lib/components/Page.svelte";
     import Project from "$lib/components/Project.svelte";
+    import Title from "$lib/components/Title.svelte";
     import SortNameAsc from "$lib/icons/sort-alphabetical-ascending.svg?component";
     import SortNameDesc from "$lib/icons/sort-alphabetical-descending.svg?component";
     import SortDateAsc from "$lib/icons/sort-date-ascending.svg?component";
@@ -92,7 +93,7 @@
 
 <Page class="flex max-w-(--breakpoint-2xl) flex-col gap-2 md:gap-4">
     <div class="flex flex-row items-center gap-1">
-        <h2 class="mr-auto text-4xl">Projects</h2>
+        <Title class="mr-auto">Projects</Title>
 
         <IconSelect
             name="tags"
