@@ -68,7 +68,7 @@
             {@const Icon = map[item].icon}
 
             <span
-                class="inline-flex flex-row items-center gap-2 rounded-full bg-ctp-mantle px-2 py-1"
+                class="inline-flex flex-row items-center gap-2 rounded-full bg-ctp-crust px-2 py-1"
             >
                 <Icon class="text-xl" aria-hidden="true" />
                 <span class="text-base">
