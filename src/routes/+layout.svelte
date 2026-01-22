@@ -6,6 +6,7 @@
     import { onNavigate } from "$app/navigation";
     import { page } from "$app/state";
     import Header from "$lib/components/Header.svelte";
+    import themeScript from "$lib/js/theme?url";
     import { fly } from "svelte/transition";
 
     import type { Snapshot } from "./$types";
@@ -37,6 +38,10 @@
         if (scrollElement) scrollElement.scrollTop = scrollPosition;
     });
 </script>
+
+<svelte:head>
+    <script src={themeScript}></script>
+</svelte:head>
 
 <div
     class="grid h-full overflow-hidden motion-safe:transition-all"
