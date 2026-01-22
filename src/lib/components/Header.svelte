@@ -59,13 +59,10 @@
                 rel="noopener noreferrer"
                 target="_blank"
                 title="Github"
-                ><Github aria-hidden="true" /><span class="sr-only"
-                    >Github profile</span
-                ></a
             >
-            <!-- <button type="button">
-                <AnimatedIcon path="/light-dark-mode.json" />
-            </button> -->
+                <Github aria-hidden="true" />
+                <span class="sr-only">Github profile</span>
+            </a>
         </div>
     </nav>
 </header>
