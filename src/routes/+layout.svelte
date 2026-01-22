@@ -48,7 +48,7 @@
     <main
         class="grid grid-cols-1 grid-rows-1 justify-items-center overflow-hidden"
     >
-        {#key page.url.pathname}
+        {#key page.route.id}
             <div
                 bind:this={scrollElement}
                 class="col-span-full row-span-full flex w-full flex-col items-center overflow-x-hidden overflow-y-auto p-4"
