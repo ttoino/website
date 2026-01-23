@@ -19,8 +19,12 @@ export interface Project {
     url?: string;
 }
 
-const projectsWithoutImage = [
+const projectsWithoutImages = [
     {
+        description: [
+            "Icon font based on Material Symbols by Google, which uses variable font technology to represent a value through an icon.",
+            "Originally created to show the battery level, speaker volume, and wifi signal of my laptop.",
+        ],
         id: "meterial-symbols",
         name: "Meterial Symbols",
         repo: "https://github.com/ttoino/meterial-symbols",
@@ -31,6 +35,10 @@ const projectsWithoutImage = [
         url: "https://meterial.toino.pt",
     },
     {
+        description: [
+            "Mopidy plugin that provides a frontend based on Material Design.",
+            "It supports all major features, including browsing your tracks, albums, artists and playlists, managing your queued music, seeing lyrics, etc.",
+        ],
         id: "mopidy-marceline",
         name: "Mopidy Marceline",
         repo: "https://github.com/ttoino/mopidy-marceline",
@@ -40,6 +48,10 @@ const projectsWithoutImage = [
         technologies: ["python", "svelte", "tailwind", "typescript"],
     },
     {
+        description: [
+            "Svelte and Tailwind library implementing Material Design 3.",
+            "It supports most components using bits-ui and tailwind utility classes, and design system specific concepts through custom tailwind utilities and variants.",
+        ],
         id: "svelte-m3c",
         name: "Svelte M3C",
         repo: "https://github.com/ttoino/svelte-m3c",
@@ -60,6 +72,11 @@ const projectsWithoutImage = [
         url: "https://toino.pt",
     },
     {
+        description: [
+            "Website to show the upcoming menus, and archive the past menus at the different University of Porto restaurants.",
+            "Used heuristics to parse PDF files from the official SASUP website. Also used OCR when the underlying text was not available.",
+            "Was superseded by the new SASUP menu website, which has most of the same features.",
+        ],
         endDate: new Date("2024-05-21"),
         id: "ementas",
         name: "UP Menus",
@@ -244,7 +261,7 @@ const projectsWithoutImage = [
         tags: ["mobile", "personal"],
         technologies: ["android", "java"],
     },
-] as const satisfies readonly Project[];
+] as const satisfies readonly Omit<Project, "images">[];
 
 const projectImages: Record<string, Picture> = import.meta.glob(
     ["./*/*.png", "./*/dark/*.png", "./*/light/*.png"],
@@ -259,7 +276,7 @@ const projectImages: Record<string, Picture> = import.meta.glob(
     },
 );
 
-export const projects = projectsWithoutImage.map((project) => {
+export const projects = projectsWithoutImages.map((project) => {
     const darkImages: Picture[] = [];
     const lightImages: Picture[] = [];
     const images: Picture[] = [];
