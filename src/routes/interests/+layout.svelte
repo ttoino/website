@@ -9,7 +9,7 @@
 
 <Page class="mx-auto flex h-full max-w-(--breakpoint-lg) flex-col">
     <nav
-        class="h-12 flex max-w-full flex-row items-center gap-8 overflow-x-auto overflow-y-hidden"
+        class="flex h-12 max-w-full flex-row items-center gap-8 overflow-x-auto overflow-y-hidden"
     >
         {#each interests as interest (interest.id)}
             {@const current = interest.id === page.params.interest}
