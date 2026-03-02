@@ -1,0 +1,10 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "website",
+    "compatibility_date": "2026-03-02",
+    "compatibility_flags": ["nodejs_als", "nodejs_compat"],
+    "pages_build_output_dir": ".svelte-kit/cloudflare",
+    "observability": {
+        "enabled": true,
+    },
+}
