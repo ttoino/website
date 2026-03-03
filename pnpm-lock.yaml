@@ -114,7 +114,7 @@ importers:
         specifier: ^9.0.2
         version: 9.0.3(rollup@4.48.1)
       wrangler:
-        specifier: ^4.63.0
+        specifier: ^4.69.0
         version: 4.69.0
 
 packages:
