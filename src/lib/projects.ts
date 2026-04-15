@@ -22,8 +22,8 @@ export interface Project {
 const projectsWithoutImages = [
     {
         description: [
-            "Icon font based on Material Symbols by Google, which uses variable font technology to represent a value through an icon.",
-            "Originally created to show the battery level, speaker volume, and wifi signal of my laptop.",
+            "Variable icon font that extends Material Symbols to display continuous progress values like battery levels and volume.",
+            "Uses variable font technology to smoothly interpolate between icon states, eliminating the need for multiple discrete icons.",
         ],
         id: "meterial-symbols",
         name: "Meterial Symbols",
@@ -36,8 +36,8 @@ const projectsWithoutImages = [
     },
     {
         description: [
-            "Mopidy plugin that provides a frontend based on Material Design.",
-            "It supports all major features, including browsing your tracks, albums, artists and playlists, managing your queued music, seeing lyrics, etc.",
+            "Modern web interface for the Mopidy music server, providing a sleek way to browse and control music playback.",
+            "Supports browsing tracks, albums, artists, and playlists, managing playback queues, and viewing lyrics.",
         ],
         id: "mopidy-marceline",
         name: "Mopidy Marceline",
@@ -49,8 +49,8 @@ const projectsWithoutImages = [
     },
     {
         description: [
-            "Svelte and Tailwind library implementing Material Design 3.",
-            "It supports most components using bits-ui and tailwind utility classes, and design system specific concepts through custom tailwind utilities and variants.",
+            "UI component library implementing Google's Material Design 3 system using Svelte and Tailwind CSS.",
+            "Provides pre-built components with customizable themes and design tokens for building modern web applications.",
         ],
         id: "svelte-m3c",
         name: "Svelte M3C",
@@ -62,6 +62,10 @@ const projectsWithoutImages = [
         url: "https://svelte-m3c.toino.pt",
     },
     {
+        description: [
+            "Personal portfolio website showcasing my projects, skills, and experience.",
+            "Built with SvelteKit and deployed to Cloudflare Pages.",
+        ],
         id: "website",
         name: "Website",
         repo: "https://github.com/ttoino/website",
@@ -73,9 +77,8 @@ const projectsWithoutImages = [
     },
     {
         description: [
-            "Website to show the upcoming menus, and archive the past menus at the different University of Porto restaurants.",
-            "Used heuristics to parse PDF files from the official SASUP website. Also used OCR when the underlying text was not available.",
-            "Was superseded by the new SASUP menu website, which has most of the same features.",
+            "Website that displays daily menus from University of Porto restaurants, with archival history of past meals.",
+            "Parses PDF menus from the official SASUP website using heuristics and OCR when underlying text is not available.",
         ],
         endDate: new Date("2024-05-21"),
         id: "ementas",
@@ -88,6 +91,10 @@ const projectsWithoutImages = [
         // url: "https://ementas.toino.pt",
     },
     {
+        description: [
+            "Website that displays the top 100 GitHub users by country, ranked by their contribution activity.",
+            "Supports viewing leaderboards for every country in the world, including global rankings.",
+        ],
         endDate: new Date("2023-12-15"),
         id: "top-commiters",
         name: "Top commiters",
@@ -99,6 +106,10 @@ const projectsWithoutImages = [
         url: "https://commits.toino.pt",
     },
     {
+        description: [
+            "Collection of 3D graphics projects using Three.js, including scene rendering and an interactive game.",
+            "Covers computer graphics concepts such as lighting, materials, animations, and user interaction.",
+        ],
         endDate: new Date("2024-01-04"),
         id: "sgi",
         name: "SGI",
@@ -110,6 +121,10 @@ const projectsWithoutImages = [
         url: "https://sgi.toino.pt",
     },
     {
+        description: [
+            "Information retrieval system for exploring the League of Legends universe, including stories, characters, and regions.",
+            "Uses Apache Solr for indexing and searching through a collection of lore documents with faceted search capabilities.",
+        ],
         endDate: new Date("2023-12-23"),
         id: "luis",
         name: "LUIS",
@@ -121,6 +136,10 @@ const projectsWithoutImages = [
         url: "https://luis.toino.pt",
     },
     {
+        description: [
+            "Distributed shopping list application designed for offline-first usage with eventual consistency across devices.",
+            "Uses Conflict-free Replicated Data Types (CRDTs) to synchronize data between clients without requiring a central server.",
+        ],
         endDate: new Date("2023-12-22"),
         id: "sdle",
         name: "SDLE",
@@ -132,6 +151,11 @@ const projectsWithoutImages = [
         url: "https://sdle.toino.pt",
     },
     {
+        description: [
+            "Compiler for Java--, a subset of the Java programming language, written in Java using ANTLR for parsing.",
+            "Supports optimizations like constant folding, constant propagation, and dead code elimination, as well as register allocation.",
+            "Compiles to JVM bytecode using the Ollir intermediate language and the Jasmin assembler.",
+        ],
         endDate: new Date("2023-05-28"),
         id: "jmm",
         name: "Java--",
@@ -143,6 +167,10 @@ const projectsWithoutImages = [
         url: "https://jmm.toino.pt",
     },
     {
+        description: [
+            "Project management web application inspired by Trello, allowing users to organize tasks using boards, lists, and cards.",
+            "Features include real-time updates, team collaboration, due dates, labels, and a responsive interface.",
+        ],
         endDate: new Date("2023-03-16"),
         id: "atrellado",
         name: "Atrellado",
@@ -160,6 +188,11 @@ const projectsWithoutImages = [
         url: "https://atrellado.toino.pt",
     },
     {
+        description: [
+            "Implementation of the Center board game in Prolog, playable in the terminal against AI opponents.",
+            "A 1v1 strategy game where players aim to place pieces in the center cell, with movement limited by line-of-sight visibility.",
+            "Features multiple levels of AI difficulty using the Minimax algorithm with Alpha-Beta pruning.",
+        ],
         endDate: new Date("2023-01-17"),
         id: "center",
         name: "Center",
@@ -170,6 +203,10 @@ const projectsWithoutImages = [
         technologies: ["prolog"],
     },
     {
+        description: [
+            "Command-line tool for managing Advent of Code solutions, automating repetitive tasks like fetching input and submitting answers.",
+            "Features include repository initialization, progress tracking, automated testing, and README generation with solution statistics.",
+        ],
         endDate: new Date("2022-12-03"),
         id: "aocm",
         name: "Advent of Code Manager",
@@ -180,6 +217,10 @@ const projectsWithoutImages = [
         technologies: ["python"],
     },
     {
+        description: [
+            "Food delivery platform connecting customers with restaurants, featuring menus, reviews, and order management.",
+            "Supports customer accounts, restaurant owners, delivery tracking, and a search system with filters for cuisine and price.",
+        ],
         endDate: new Date("2022-06-14"),
         id: "xaufome",
         name: "Xau Fome",
@@ -191,6 +232,10 @@ const projectsWithoutImages = [
         url: "https://xaufome.toino.pt",
     },
     {
+        description: [
+            "Simple web tool for previewing LaTeX equations and generating embeddable image URLs for use in markdown documents.",
+            "Useful for adding mathematical expressions to GitHub READMEs and other platforms that do not natively support LaTeX.",
+        ],
         endDate: new Date("2022-03-30"),
         id: "latex-previewer",
         name: "LaTeX Previewer",
@@ -202,6 +247,10 @@ const projectsWithoutImages = [
         // url: "https://latex.toino.pt",
     },
     {
+        description: [
+            "Turn-based strategy game inspired by Into the Breach, played entirely in the terminal.",
+            "Features tactical combat with mechs, environmental hazards, and enemy AI, built using test-driven development practices.",
+        ],
         endDate: new Date("2022-01-30"),
         id: "ootb",
         name: "Out of the Breach",
@@ -212,6 +261,10 @@ const projectsWithoutImages = [
         technologies: ["java", "lanterna"],
     },
     {
+        description: [
+            "Arcade-style robot avoidance game playable through Discord, where players must escape from pursuing enemies.",
+            "Originally developed as a university project using C++, later ported to a Discord bot using TypeScript.",
+        ],
         endDate: new Date("2021-03-30"),
         id: "proggers",
         name: "Proggers",
@@ -222,6 +275,10 @@ const projectsWithoutImages = [
         technologies: ["cpp", "typescript"],
     },
     {
+        description: [
+            "Classic Klondike solitaire card game with a graphical interface built using Pygame.",
+            "Features drag-and-drop card movement, automatic win detection, and a polished visual design with custom card assets.",
+        ],
         endDate: new Date("2021-01-24"),
         id: "solitaire",
         name: "Solitaire",
@@ -232,6 +289,10 @@ const projectsWithoutImages = [
         technologies: ["pygame", "python"],
     },
     {
+        description: [
+            "Multiplayer card game played in the terminal, inspired by Uno, supporting online play with friends.",
+            "Uses a custom WebSocket framework for real-time communication, with Firebase handling authentication and lobby management.",
+        ],
         endDate: new Date("2019"),
         id: "bruno",
         name: "Bruno",
@@ -242,6 +303,10 @@ const projectsWithoutImages = [
         technologies: ["firebase", "java", "netty"],
     },
     {
+        description: [
+            "Minimalist watch face for Wear OS smartwatches with support for customizable complications.",
+            "Allows displaying additional data like date, steps, or battery level through configurable complication slots.",
+        ],
         endDate: new Date("2019"),
         id: "watch-face",
         name: "Custom Watch Face",
@@ -252,6 +317,10 @@ const projectsWithoutImages = [
         technologies: ["android", "java"],
     },
     {
+        description: [
+            "Android app that enables custom animated wallpapers on OnePlus devices by hooking into the system wallpaper provider.",
+            "Supports both static and video-based animated backgrounds, allowing users to personalize their home screen.",
+        ],
         endDate: new Date("2019"),
         id: "opcwp",
         name: "OnePlus Custom Wallpaper Provider",
