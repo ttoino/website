@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Personal website built with SvelteKit 5, deployed to Cloudflare Pages.
+Personal website built with SvelteKit 5, deployed to Cloudflare Workers.
 
 ## Development Environment
 
@@ -44,7 +44,7 @@ pnpm run build
 # Preview production build locally
 pnpm run preview
 
-# Deploy to Cloudflare Pages
+# Deploy to Cloudflare Workers
 pnpm run deploy
 ```
 
@@ -76,10 +76,10 @@ All checks use `--frozen-lockfile` for reproducible installs.
 
 ## Architecture Notes
 
-**SvelteKit with Cloudflare Pages adapter.** Key configuration:
+**SvelteKit with Cloudflare adapter.** Key configuration:
 
-- `svelte.config.js`: Cloudflare adapter excludes all routes except `/sitemap.xml` from edge functions
-- `wrangler.jsonc`: Deploys from `.svelte-kit/cloudflare`
+- `svelte.config.js`: Cloudflare adapter (supports both Pages and Workers)
+- `wrangler.jsonc`: Worker entry at `.svelte-kit/cloudflare/_worker.js` with static assets from `.svelte-kit/cloudflare`
 - `vite.config.ts`: Uses `enhancedImages()`, `sveltekit()`, `svg()`, and Tailwind v4
 
 **Project structure:**
@@ -112,7 +112,7 @@ All checks use `--frozen-lockfile` for reproducible installs.
 
 ## Deployment
 
-Cloudflare Pages via Wrangler. Requires Cloudflare authentication. Build output goes to `.svelte-kit/cloudflare/`.
+Cloudflare Workers via Wrangler. Requires Cloudflare authentication. Build output goes to `.svelte-kit/cloudflare/`.
 
 ```bash
 # Deploy (builds then deploys)

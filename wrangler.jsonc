@@ -5,10 +5,12 @@
     "compatibility_date": "2026-03-02",
     "compatibility_flags": ["nodejs_als", "nodejs_compat"],
     "assets": {
-        "directory": ".svelte-kit/cloudflare",
         "binding": "ASSETS",
+        "directory": ".svelte-kit/cloudflare",
         "not_found_handling": "404-page",
     },
+    "workers_dev": true,
+    "preview_urls": true,
     "observability": {
         "enabled": true,
     },
