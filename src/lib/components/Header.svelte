@@ -4,10 +4,14 @@
     import Github from "$lib/icons/github.svg?component";
     import { label, links } from "$lib/links";
 
+    import ThemeIcon from "./ThemeIcon.svelte";
+
     let {
         index,
+        onToggleTheme,
     }: {
         index: boolean;
+        onToggleTheme: () => void;
     } = $props();
 </script>
 
@@ -63,6 +67,13 @@
                 <Github aria-hidden="true" />
                 <span class="sr-only">Github profile</span>
             </a>
+            <button
+                class="cursor-pointer"
+                onclick={() => onToggleTheme()}
+                type="button"
+            >
+                <ThemeIcon />
+            </button>
         </div>
     </nav>
 </header>
