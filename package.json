@@ -1,6 +1,8 @@
 {
     "name": "website",
     "version": "0.0.1",
+    "description": "",
+    "type": "module",
     "scripts": {
         "dev": "vite dev",
         "build": "vite build",
@@ -28,6 +30,7 @@
         "@sveltejs/vite-plugin-svelte": "^7.0.0",
         "@tailwindcss/typography": "^0.5.16",
         "@tailwindcss/vite": "^4.1.13",
+        "@types/node": "^25.9.1",
         "@typescript-eslint/eslint-plugin": "^8.44.0",
         "@typescript-eslint/parser": "^8.44.0",
         "bits-ui": "^2.9.9",
@@ -56,6 +59,5 @@
         "vite-imagetools": "^10.0.0",
         "wrangler": "^4.69.0"
     },
-    "type": "module",
-    "packageManager": "pnpm@10.9.0+sha512.0486e394640d3c1fb3c9d43d49cf92879ff74f8516959c235308f5a8f62e2e19528a65cdc2a3058f587cde71eba3d5b56327c8c33a97e4c4051ca48a10ca2d5f"
+    "packageManager": "pnpm@11.2.2+sha512.36e6621fad506178936455e70247b8808ef4ec25797a9f437a93281a020484e2607f6a469a22e982987c3dbb8866e3071514ab10a4a1749e06edcd1ec118436f"
 }

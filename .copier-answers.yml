@@ -1,0 +1,11 @@
+# Changes here will be overwritten by Copier
+_commit: aa042f0
+_src_path: gh:ttoino/templates
+browser_tests: true
+description: ''
+name: website
+svelte_m3c: false
+tailwind: true
+tests: false
+type: sveltekit
+

@@ -50,7 +50,6 @@ export default ts.config(
             ]),
         ),
     },
-
     ...svelte.configs.all,
     {
         rules: {
@@ -60,11 +59,14 @@ export default ts.config(
                     script: ["ts"],
                 },
             ],
+            "svelte/consistent-selector-style": "off",
             "svelte/experimental-require-strict-events": "off",
             "svelte/no-inline-styles": "off",
             "svelte/no-navigation-without-base": "off",
+            "svelte/no-top-level-browser-globals": "off",
             "svelte/no-unused-class-name": "off",
             "svelte/require-optimized-style-attribute": "off",
+            "svelte/valid-compile": "off",
         },
     },
     {
@@ -80,7 +82,6 @@ export default ts.config(
             },
         },
     },
-
     prettier,
     ...svelte.configs.prettier,
 );

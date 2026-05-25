@@ -1,0 +1,15 @@
+{
+    "svelte.enable-ts-plugin": true,
+    "tailwindCSS.experimental.configFile": "src/app.css",
+    "tailwindCSS.classFunctions": ["tv", "twMerge"],
+    "tailwindCSS.classAttributes": [
+        "class",
+        "className",
+        "ngClass",
+        "class:list",
+        "\\w+Class"
+    ],
+    "files.associations": {
+        "*.css": "tailwindcss"
+    }
+}

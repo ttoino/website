@@ -5,11 +5,21 @@
     "trailingComma": "all",
     "useTabs": false,
     "tailwindAttributes": ["/^\\w+Class$/"],
-    "tailwindStylesheet": "./src/routes/style.css",
-    "tailwindFunctions": ["clsx", "cn", "tv", "twMerge"],
+    "tailwindStylesheet": "./src/app.css",
+    "tailwindFunctions": ["tv", "twMerge"],
     "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
     "overrides": [
-        { "files": "*.svelte", "options": { "parser": "svelte" } },
-        { "files": "**.yml", "options": { "tabWidth": 2 } }
+        {
+            "files": "*.svelte",
+            "options": {
+                "parser": "svelte"
+            }
+        },
+        {
+            "files": ["*.yml", "*.yaml"],
+            "options": {
+                "tabWidth": 2
+            }
+        }
     ]
 }

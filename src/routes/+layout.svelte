@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
 
-    import "./style.css";
+    import "../app.css";
 
     import { onNavigate } from "$app/navigation";
     import { page } from "$app/state";

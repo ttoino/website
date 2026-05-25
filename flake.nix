@@ -1,8 +1,9 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+
     playwright = {
-      url = "github:pietdevries94/playwright-web-flake/1.58.2";
+      url = "github:pietdevries94/playwright-web-flake/1.59.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -10,20 +11,24 @@
   outputs =
     {
       nixpkgs,
+
       playwright,
       self,
+
       ...
     }:
     let
       system = "x86_64-linux";
+
       pkgs = import nixpkgs {
         inherit system;
         overlays = [ self.overlays.default ];
       };
+
     in
     {
       overlays.default = final: prev: {
-        inherit (playwright.packages.${system}) playwright-driver;
+        inherit (playwright.packages.${system}) playwright-test playwright-driver;
       };
 
       devShells.${system}.default = pkgs.mkShell {
