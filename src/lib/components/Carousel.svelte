@@ -28,7 +28,7 @@
 
     let setTimer = $derived(
         () =>
-            void (timer = setInterval(
+            void (timer = window.setInterval(
                 () => void (currentIndex = (currentIndex + 1) % images.length),
                 interval,
             )),
