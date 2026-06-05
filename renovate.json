@@ -1,0 +1,29 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
+    "nix": {
+        "enabled": true
+    },
+    "schedule": ["* 0-3 1 * *"],
+    "prConcurrentLimit": 1,
+    "lockFileMaintenance": {
+        "enabled": true,
+        "groupName": "all dependencies",
+        "schedule": ["* 0-3 1 * *"]
+    },
+    "packageRules": [
+        {
+            "groupName": "all dependencies",
+            "matchManagers": ["npm", "github-actions", "nix"]
+        },
+        {
+            "matchDepTypes": ["devDependencies"],
+            "matchUpdateTypes": ["patch", "minor"],
+            "automerge": true
+        },
+        {
+            "matchPackageNames": ["pnpm"],
+            "minimumReleaseAge": "1 day"
+        }
+    ]
+}

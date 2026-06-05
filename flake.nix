@@ -38,6 +38,9 @@
         ];
 
         shellHook = ''
+          export NODE_EXTRA_CA_CERTS="${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+          export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
+
           export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=true
           export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
           export PLAYWRIGHT_HOST_PLATFORM_OVERRIDE="ubuntu-24.04"
