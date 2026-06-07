@@ -70,6 +70,10 @@ All jobs use `pnpm install --frozen-lockfile`.
 - `.prettierrc`: Prettier formatting config
 - `flake.nix`: Nix development shell
 
+## Dependency Automation
+
+This project uses **Renovate** for dependency updates. Renovate opens a single monthly PR grouping all npm, GitHub Actions, and Nix input updates. Patch and minor devDependencies are auto-merged.
+
 ## Deployment
 
 Cloudflare Workers via Wrangler. The demo/site is deployed through the Cloudflare dashboard, not via CI.

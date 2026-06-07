@@ -5,29 +5,25 @@
         "enabled": true
     },
     "schedule": ["* 0-3 1 * *"],
-    "prConcurrentLimit": 20,
+    "prConcurrentLimit": 1,
     "lockFileMaintenance": {
         "enabled": true,
+        "groupName": "all dependencies",
         "schedule": ["* 0-3 1 * *"]
     },
     "packageRules": [
         {
-            "matchManagers": ["npm"],
-            "groupName": "npm dependencies",
-            "rangeStrategy": "bump"
-        },
-        {
-            "matchManagers": ["github-actions"],
-            "groupName": "github actions"
-        },
-        {
-            "matchManagers": ["nix"],
-            "groupName": "nix inputs"
+            "groupName": "all dependencies",
+            "matchManagers": ["npm", "github-actions", "nix"]
         },
         {
             "matchDepTypes": ["devDependencies"],
             "matchUpdateTypes": ["patch", "minor"],
             "automerge": true
+        },
+        {
+            "matchPackageNames": ["pnpm"],
+            "minimumReleaseAge": "1 day"
         }
     ]
 }
