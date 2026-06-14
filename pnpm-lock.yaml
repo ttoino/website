@@ -90,11 +90,11 @@ importers:
         specifier: ^4.3.1
         version: 4.5.0(picomatch@4.0.4)(svelte@5.56.1(@typescript-eslint/types@8.60.1))(typescript@6.0.3)
       svelte-meta-tags:
-        specifier: ^4.4.1
-        version: 4.7.0(svelte@5.56.1(@typescript-eslint/types@8.60.1))
+        specifier: ^5.0.0
+        version: 5.0.0(svelte@5.56.1(@typescript-eslint/types@8.60.1))(typescript@6.0.3)
       svelte-sitemap:
-        specifier: ^3.0.0
-        version: 3.2.0
+        specifier: ^4.0.0
+        version: 4.0.0(vite@8.0.16(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.4))
       svgo:
         specifier: ^4.0.0
         version: 4.0.1
@@ -1928,8 +1928,14 @@ packages:
     resolution: {integrity: sha512-6R3J5M4AcbtLUdZmRv2SygeVaM7IhrLXu9BmnOGmmACak8fiUtOsYNWUS4uK7upbmHIBbLBeFeI//477BKLBzA==}
     engines: {node: '>=11.0.0'}
 
-  schema-dts@1.1.5:
-    resolution: {integrity: sha512-RJr9EaCmsLzBX2NDiO5Z3ux2BVosNZN5jo0gWgsyKvxKIUL5R3swNvoorulAeL9kLB0iTSX7V6aokhla2m7xbg==}
+  schema-dts-lib@1.0.0:
+    resolution: {integrity: sha512-9MEO5vpQH9JdBioUupqluzxSYxPLjhmqRUudk15adUl/ypnRsM2/M1kN3AmVJQeG7nZqcL68H8JlGqQQT6vy9A==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      typescript: '>=4.9.5'
+
+  schema-dts@2.0.0:
+    resolution: {integrity: sha512-t7NoCy3Rn5GHGx6p7s1qIYK/AeIb8ZxJNR9WUNFkwMv2CiiGZBmqqYWc2FlZVm5ZbiHMY4OvBWhj7QtyrFO2Jw==}
 
   semver@7.7.3:
     resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
@@ -1988,8 +1994,8 @@ packages:
       svelte:
         optional: true
 
-  svelte-meta-tags@4.7.0:
-    resolution: {integrity: sha512-H65QB8UAeS8eSt9CIa0jMoVbT7igtuCQP6itC+tqGoybxITl1Xb9m2nLNCwaS53UTeGyGtT7MGgwgsuhAJpfnQ==}
+  svelte-meta-tags@5.0.0:
+    resolution: {integrity: sha512-bRfs71axu+UP+lybEqwaO9tQdF7K/g3p3tHrUeWs6THfsryVfzJxoC5bim3lcjOgpSk1Rw60ZExKZ31PYmKK/Q==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -1998,10 +2004,15 @@ packages:
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
-  svelte-sitemap@3.2.0:
-    resolution: {integrity: sha512-229lnnP+ILx+lagMmGnqck+wXx78lLTBprTX0plCkx2dkdUTXw9vW3w/pDd5WQy4Ks9yIbU8/Y1lly5jYg/sjQ==}
+  svelte-sitemap@4.0.0:
+    resolution: {integrity: sha512-pTXrt1wn/OUUB3DozMnkcaIbxcQC0GV8PitVoE0A4ufIOQpdSRc2jIsq+KjtLKz3AOAlo5p/oSbjuSEA7ZJAmg==}
     engines: {node: '>= 14.17.0'}
     hasBin: true
+    peerDependencies:
+      vite: '>=5.0.0'
+    peerDependenciesMeta:
+      vite:
+        optional: true
 
   svelte-toolbelt@0.10.6:
     resolution: {integrity: sha512-YWuX+RE+CnWYx09yseAe4ZVMM7e7GRFZM6OYWpBKOb++s+SQ8RBIMMe+Bs/CznBMc0QPLjr+vDBxTAkozXsFXQ==}
@@ -3693,7 +3704,15 @@ snapshots:
 
   sax@1.6.0: {}
 
-  schema-dts@1.1.5: {}
+  schema-dts-lib@1.0.0(typescript@6.0.3):
+    dependencies:
+      typescript: 6.0.3
+
+  schema-dts@2.0.0(typescript@6.0.3):
+    dependencies:
+      schema-dts-lib: 1.0.0(typescript@6.0.3)
+    transitivePeerDependencies:
+      - typescript
 
   semver@7.7.3: {}
 
@@ -3776,21 +3795,25 @@ snapshots:
     optionalDependencies:
       svelte: 5.56.1(@typescript-eslint/types@8.60.1)
 
-  svelte-meta-tags@4.7.0(svelte@5.56.1(@typescript-eslint/types@8.60.1)):
+  svelte-meta-tags@5.0.0(svelte@5.56.1(@typescript-eslint/types@8.60.1))(typescript@6.0.3):
     dependencies:
-      schema-dts: 1.1.5
+      schema-dts: 2.0.0(typescript@6.0.3)
       svelte: 5.56.1(@typescript-eslint/types@8.60.1)
+    transitivePeerDependencies:
+      - typescript
 
   svelte-parse-markup@0.1.5(svelte@5.56.1(@typescript-eslint/types@8.60.1)):
     dependencies:
       svelte: 5.56.1(@typescript-eslint/types@8.60.1)
 
-  svelte-sitemap@3.2.0:
+  svelte-sitemap@4.0.0(vite@8.0.16(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.4)):
     dependencies:
       fast-glob: 3.3.3
       jiti: 2.7.0
       minimist: 1.2.8
       xmlbuilder2: 4.0.3
+    optionalDependencies:
+      vite: 8.0.16(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.4)
 
   svelte-toolbelt@0.10.6(@sveltejs/kit@2.62.0(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.56.1(@typescript-eslint/types@8.60.1))(vite@8.0.16(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.4)))(svelte@5.56.1(@typescript-eslint/types@8.60.1))(typescript@6.0.3)(vite@8.0.16(@types/node@25.9.1)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.4)))(svelte@5.56.1(@typescript-eslint/types@8.60.1)):
     dependencies:
