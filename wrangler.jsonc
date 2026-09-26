@@ -11,6 +11,11 @@
     "compatibility_flags": ["nodejs_compat"],
     "workers_dev": true,
     "preview_urls": true,
+    "previews": {},
+    "build": {
+        "command": "pnpm build",
+    },
+    "upload_source_maps": true,
     "observability": {
         "enabled": true,
         "logs": {
