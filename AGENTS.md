@@ -32,13 +32,15 @@ nix develop
 - `pnpm format`: Prettier check
 - `pnpm format:fix`: Prettier write
 - `pnpm gen:cf-types`: Regenerate worker types from `wrangler.jsonc`
+- `pnpm gen:images`: Regenerate optimized project images
+- `pnpm deploy`: Build and deploy to Cloudflare Workers
 
 ## CI Pipeline
 
 GitHub Actions runs independent jobs on PRs/pushes to `main`/`develop`:
 
 1. `format` — Prettier formatting
-2. `lint` — ESLint with TypeScript, Svelte and Perfectionist
+2. `lint` — ESLint with TypeScript, Svelte, and Perfectionist
 3. `typecheck` — `svelte-check` (requires `gen:cf-types` first)
 4. `build` — Production build
 
@@ -76,4 +78,4 @@ This project uses **Renovate** for dependency updates. Renovate opens a single m
 
 ## Deployment
 
-Cloudflare Workers via Wrangler. The demo/site is deployed through the Cloudflare dashboard, not via CI.
+Cloudflare Workers/Pages via Wrangler. The demo/site is deployed through the Cloudflare dashboard, not via CI.
