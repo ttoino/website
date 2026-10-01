@@ -49,7 +49,7 @@
     {#if project.tags}
         <ul class="mt-2 flex flex-row flex-wrap gap-2 text-2xl">
             {#each project.tags as tag, i (i)}
-                {@const Icon = tags[tag].icon}
+                {const Icon = $derived(tags[tag].icon)}
 
                 <li class="flex" title={tags[tag].label}>
                     <button
@@ -69,7 +69,7 @@
     {#if project.technologies}
         <ul class="mt-2 flex flex-row flex-wrap gap-2 text-2xl">
             {#each project.technologies as tech, i (i)}
-                {@const Icon = technologies[tech].icon}
+                {const Icon = $derived(technologies[tech].icon)}
 
                 <li class="flex" title={technologies[tech].label}>
                     <button
