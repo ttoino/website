@@ -12,11 +12,6 @@
         name: string;
     }
 
-    interface SingleProps extends BaseProps {
-        multiple?: false;
-        value: T;
-    }
-
     interface MultipleProps extends BaseProps {
         allIcon?: Component;
         icon: Component;
@@ -25,6 +20,11 @@
     }
 
     type Props = MultipleProps | SingleProps;
+
+    interface SingleProps extends BaseProps {
+        multiple?: false;
+        value: T;
+    }
 
     let { value = $bindable(), ...props }: Props = $props();
 
@@ -62,8 +62,8 @@
                                     value={key}
                                 >
                                     {#snippet children({ selected })}
-                                        {@const item = props.items[key]}
-                                        {@const Icon = item.icon}
+                                        {const item = $derived(props.items[key])}
+                                        {const Icon = $derived(item.icon)}
 
                                         <Icon
                                             class="text-2xl"

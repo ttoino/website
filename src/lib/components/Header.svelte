@@ -39,7 +39,7 @@
                 : 'md:translate-y-0'}"
         >
             {#each links as link (link)}
-                {@const active = !!page.route.id?.startsWith(link)}
+                {const active = $derived(!!page.route.id?.startsWith(link))}
 
                 <a
                     class="hover:underline"

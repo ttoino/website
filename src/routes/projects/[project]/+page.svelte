@@ -65,7 +65,7 @@
         {title}:
 
         {#each list as item (item)}
-            {@const Icon = map[item].icon}
+            {const Icon = $derived(map[item].icon)}
 
             <span
                 class="inline-flex flex-row items-center gap-2 rounded-full bg-ctp-crust px-2 py-1"
