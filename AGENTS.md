@@ -2,9 +2,11 @@
 
 ## Project Overview
 
-**Type**: sveltekit + SvelteKit 2 + Svelte 5 + Tailwind CSS v4
-**Runtime**: Cloudflare Workers
-**Package Manager**: pnpm 11.2.2
+My personal website and portfolio
+
+**Type**: SvelteKit app + Tailwind CSS
+**Runtime**: Cloudflare Workers / Pages
+**Package Manager**: pnpm
 
 ## Development Environment
 
@@ -41,10 +43,10 @@ GitHub Actions runs independent jobs on PRs/pushes to `main`/`develop`:
 
 1. `format` — Prettier formatting
 2. `lint` — ESLint with TypeScript, Svelte, and Perfectionist
-3. `typecheck` — `svelte-check` (requires `gen:cf-types` first)
-4. `build` — Production build
+3. `typecheck` — generate Cloudflare types, then `svelte-check`
+4. `build` — generate Cloudflare types, then production build
 
-All jobs use `pnpm install --frozen-lockfile`.
+All jobs use the `./.github/actions/setup-project` composite action.
 
 ## Architecture Notes
 
@@ -78,4 +80,6 @@ This project uses **Renovate** for dependency updates. Renovate opens a single m
 
 ## Deployment
 
-Cloudflare Workers/Pages via Wrangler. The demo/site is deployed through the Cloudflare dashboard, not via CI.
+Cloudflare Workers/Pages via Wrangler. Run `pnpm run build` before `wrangler deploy`.
+
+When using the Cloudflare dashboard Git integration, set the build command to `pnpm build` so `wrangler deploy` does not build twice.

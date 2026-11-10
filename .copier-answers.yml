@@ -1,7 +1,8 @@
 # Changes here will be overwritten by Copier
-_commit: 459145c
+_commit: 25e6769
 _src_path: gh:ttoino/templates
-description: ''
+description: My personal website and portfolio
+github_user: ttoino
 name: website
 project_type: sveltekit
 svelte_m3c: false

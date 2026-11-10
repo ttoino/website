@@ -6,6 +6,7 @@
         "enabled": true
     },
     "schedule": ["* 0-3 1 * *"],
+    "updateNotScheduled": false,
     "prConcurrentLimit": 4,
     "minimumReleaseAge": "1 day",
     "lockFileMaintenance": {
@@ -15,19 +16,17 @@
     },
     "packageRules": [
         {
-            "groupName": "npm and nix dependencies",
-            "matchManagers": ["npm", "nix"],
+            "groupName": "minor dependencies",
             "matchUpdateTypes": ["patch", "minor"],
             "automerge": true
         },
         {
-            "groupName": "npm and nix dependencies",
-            "matchManagers": ["npm", "nix"],
+            "groupName": "major dependencies",
             "matchUpdateTypes": ["major"]
         },
         {
-            "groupName": "github actions",
-            "matchManagers": ["github-actions"],
+            "groupName": "lockfile maintenance",
+            "matchUpdateTypes": ["lockFileMaintenance"],
             "automerge": true
         }
     ]
