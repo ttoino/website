@@ -20,7 +20,7 @@
         "lint:fix": "eslint --fix .",
         "format": "prettier --check .",
         "format:fix": "prettier --write .",
-        "gen": "pnpm run gen:cf-types; pnpm run gen:images",
+        "gen": "pnpm run gen:cf-types && pnpm run gen:images",
         "gen:cf-types": "wrangler types src/worker-configuration.d.ts && node -e \"require('fs').writeFileSync('.svelte-kit/cloudflare/_worker.d.ts', 'declare const worker: unknown;\\nexport default worker;\\n')\"",
         "gen:images": "tsx ./scripts/gen-images.ts",
         "deploy": "pnpm run build && wrangler deploy"
