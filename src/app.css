@@ -29,12 +29,7 @@
         height: 1em;
     }
 
-    svg > :not(mask),
-    svg > :not(mask) > :not(mask),
-    svg > :not(mask) > :not(mask) > :not(mask),
-    svg > :not(mask) > :not(mask) > :not(mask) > :not(mask),
-    svg > :not(mask) > :not(mask) > :not(mask) > :not(mask) > :not(mask),
-    svg > :not(mask) > :not(mask) > :not(mask) > :not(mask) > :not(mask) * {
+    svg :not(mask, mask *) {
         fill: currentColor;
     }
 }
