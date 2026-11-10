@@ -9,6 +9,7 @@
 </script>
 
 <script lang="ts">
+    import type { Trait } from "$lib/trait.js";
     import type { Component } from "svelte";
     import type { SVGAttributes } from "svelte/elements";
 
@@ -20,8 +21,8 @@
     import ArrowLeft from "$lib/icons/arrow-left.svg?component";
     import Github from "$lib/icons/github.svg?component";
     import OpenInNew from "$lib/icons/open-in-new.svg?component";
-    import { type Tag, tags } from "$lib/tags.js";
-    import { technologies, type Technology } from "$lib/technologies.js";
+    import { tags } from "$lib/tags.js";
+    import { technologies } from "$lib/technologies.js";
     import { MetaTags } from "svelte-meta-tags";
 
     let { data } = $props();
@@ -56,10 +57,10 @@
     </p>
 {/snippet}
 
-{#snippet tagList<T extends string>(
+{#snippet traitList<T extends string>(
     title: string,
     list: readonly T[],
-    map: Record<T, Tag & Technology>,
+    map: Record<T, Trait>,
 )}
     <p class="inline-flex flex-row flex-wrap items-center gap-2">
         {title}:
@@ -149,9 +150,9 @@
                     {@render iconLink(Github, data.project.repo, "View code")}
                 {/if}
 
-                {@render tagList("Tags", data.project.tags, tags)}
+                {@render traitList("Tags", data.project.tags, tags)}
 
-                {@render tagList(
+                {@render traitList(
                     "Technologies",
                     data.project.technologies,
                     technologies,

@@ -1,3 +1,5 @@
+import type { Trait } from "./trait";
+
 import AndroidIcon from "./icons/technologies/android.svg?component";
 import AntlrIcon from "./icons/technologies/antlr.svg?component";
 import BootstrapIcon from "./icons/technologies/bootstrap.svg?component";
@@ -27,10 +29,7 @@ import TailwindIcon from "./icons/technologies/tailwind.svg?component";
 import ThreejsIcon from "./icons/technologies/threejs.svg?component";
 import TypescriptIcon from "./icons/technologies/typescript.svg?component";
 
-export interface Technology {
-    icon: typeof AntlrIcon;
-    label: string;
-}
+export type Technology = Trait;
 
 export const technologies = {
     android: { icon: AndroidIcon, label: "Android" },

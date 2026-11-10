@@ -1,3 +1,5 @@
+import type { Trait } from "./trait";
+
 import DiscordIcon from "./icons/tags/discord.svg?component";
 import GameIcon from "./icons/tags/game.svg?component";
 import MobileIcon from "./icons/tags/mobile.svg?component";
@@ -9,10 +11,7 @@ import UniversityIcon from "./icons/tags/university.svg?component";
 import WearableIcon from "./icons/tags/wearable.svg?component";
 import WebIcon from "./icons/tags/web.svg?component";
 
-export interface Tag {
-    icon: typeof MobileIcon;
-    label: string;
-}
+export type Tag = Trait;
 
 export const tags = {
     discord: { icon: DiscordIcon, label: "Discord" },
