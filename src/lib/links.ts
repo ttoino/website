@@ -1,8 +1,11 @@
 import type { RouteId } from "$app/types";
 
-export const label = (link: RouteId) => link.replaceAll(/-+|\//g, " ").trim();
+export interface Link {
+    href: RouteId;
+    label: string;
+}
 
 export const links = [
-    "/about-me",
-    "/projects",
-] as const satisfies readonly RouteId[];
+    { href: "/about-me", label: "about me" },
+    { href: "/projects", label: "projects" },
+] as const satisfies readonly Link[];

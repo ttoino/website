@@ -2,7 +2,7 @@
     import { resolve } from "$app/paths";
     import { page } from "$app/state";
     import Github from "$lib/icons/github.svg?component";
-    import { label, links } from "$lib/links";
+    import { links } from "$lib/links";
 
     let {
         index,
@@ -38,15 +38,15 @@
                 ? 'md:translate-y-20'
                 : 'md:translate-y-0'}"
         >
-            {#each links as link (link)}
-                {@const active = !!page.route.id?.startsWith(link)}
+            {#each links as link (link.href)}
+                {@const active = !!page.route.id?.startsWith(link.href)}
 
                 <a
                     class="hover:underline"
                     class:font-bold={active}
-                    href={resolve(link)}
+                    href={resolve(link.href)}
                 >
-                    {label(link)}
+                    {link.label}
                 </a>
             {/each}
         </div>
