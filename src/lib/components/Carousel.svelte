@@ -20,31 +20,41 @@
     } = $props();
 
     let currentIndex = $state(0);
-    let timer = $state<number | undefined>();
+    let timer: number | undefined;
 
     const noMouse = new MediaQuery("pointer: coarse");
 
     let automatic = $derived(baseAutomatic ?? noMouse.current);
 
-    let setTimer = $derived(
-        () =>
-            void (timer = window.setInterval(
-                () => void (currentIndex = (currentIndex + 1) % images.length),
-                interval,
-            )),
-    );
+    const clearTimer = () => {
+        clearInterval(timer);
+        timer = undefined;
+    };
+
+    const setTimer = () => {
+        clearTimer();
+        timer = window.setInterval(
+            () => void (currentIndex = (currentIndex + 1) % images.length),
+            interval,
+        );
+    };
 
     $effect(() => {
-        if (!automatic || images.length == 0) return;
+        if (currentIndex >= images.length) currentIndex = 0;
+    });
+
+    $effect(() => {
+        if (!automatic || images.length === 0) {
+            clearTimer();
+            return;
+        }
 
         setTimer();
-
-        return () => clearInterval(timer);
+        return () => clearTimer();
     });
 
     const onMouseEnter = () => setTimer();
-
-    const onMouseLeave = () => clearInterval(timer);
+    const onMouseLeave = () => clearTimer();
 </script>
 
 <div
