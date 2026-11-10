@@ -5,6 +5,7 @@
 
     import { onNavigate } from "$app/navigation";
     import { page } from "$app/state";
+    import { showWhitespace } from "$lib/attachments/showWhitespace";
     import Header from "$lib/components/Header.svelte";
     import { fly } from "svelte/transition";
 
@@ -42,6 +43,7 @@
     class="grid h-full overflow-hidden motion-safe:transition-all"
     class:grid-rows-[auto_0fr]={index}
     class:grid-rows-[auto_1fr]={!index}
+    {@attach showWhitespace("\u2027")}
 >
     <Header {index} />
 
@@ -59,3 +61,21 @@
         {/key}
     </main>
 </div>
+
+<style>
+    @layer components {
+        :global([data-whitespace-content]:not([class*="before:"])) {
+            position: relative;
+
+            &::before {
+                content: attr(data-whitespace-content);
+                opacity: 50%;
+                pointer-events: none;
+
+                position: absolute;
+                inset: 0;
+                right: -1ch;
+            }
+        }
+    }
+</style>
