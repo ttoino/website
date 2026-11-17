@@ -7,5 +7,6 @@ export interface Link {
 
 export const links = [
     { href: "/about-me", label: "about me" },
+    { href: "/interests", label: "interests" },
     { href: "/projects", label: "projects" },
 ] as const satisfies readonly Link[];
